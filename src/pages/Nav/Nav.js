@@ -2,7 +2,7 @@ import React from 'react';
 
 const Nav = () => {
     return (
-       <div className=' bg-green-500 hidden md:block'>
+       <div className='sticky top-0 z-20 bg-green-500 hidden md:block w-full'>
             <div className='max-w-7xl mx-auto px-4'>
                 <div className='flex items-center gap-5  text-white font-semibold'>
                     <div className="dropdown py-2 px-8 bg-yellow-400 text-black">

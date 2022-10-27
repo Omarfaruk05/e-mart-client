@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ElectroAndaudioNav = () => {
+const ElectroAndaudioNav = ({navItemNames}) => {
+    
     return (
         <>
         <div className="navbar bg-base-100 mb-0">
@@ -9,9 +10,10 @@ const ElectroAndaudioNav = () => {
             </div>
             <div className="flex-none">
                 <ul className="menu menu-horizontal p-0">
-                <li><a className='md:font-semibold'>SmartTV</a></li>
-                <li><a className='md:font-semibold'>HeadPhone</a></li>
-                <li><a className='md:font-semibold'>Laptop</a></li>
+                {
+                    navItemNames.map(navItemName => <li><a className='md:font-semibold'>{navItemName}</a></li>)
+                }
+                
                 </ul>
             </div>
         </div>

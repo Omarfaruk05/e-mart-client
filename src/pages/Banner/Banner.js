@@ -14,7 +14,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Banner = () => {
     return (
-        <div>
+        <div className="">
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -27,7 +27,7 @@ const Banner = () => {
                 }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper min-h-[220px]"
+                className="mySwiper md:min-h-[220px]"
             >
                 <SwiperSlide><img  src="https://placeimg.com/800/200/arch" alt="" className="w-full" /></SwiperSlide>
                 <SwiperSlide> <img src="https://placeimg.com/800/200/arch" alt="" className="w-full" /></SwiperSlide>
