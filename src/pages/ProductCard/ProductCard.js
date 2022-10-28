@@ -5,7 +5,7 @@ import product1 from "../../assets/discount-photo/disouunt-1.png"
 const ProductCard = () => {
     return (
         <div>
-            <div className='border border-green-300 rounded-sm shadow-sm mb-8'>
+            <div className='border bg-base-100 border-green-300 rounded-sm shadow-sm mb-8'>
                 <div className='mt-4 text-center p-5 h-[345px]'>
                     <div><img className='w-48 mx-auto' src={product1} alt="" /></div>
                     <div>

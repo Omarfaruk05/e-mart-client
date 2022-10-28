@@ -21,6 +21,7 @@ const AllBrands = () => {
         <div className='max-w-7xl mx-auto my-4'>
           <h1 className='text-center text-4xl font-bold m'>Our Brands</h1>
           <div className='h-1 w-60 rounded-lg bg-gray-400 mx-auto mb-4'></div>
+          <hr />
       <Swiper
         slidesPerView={5}
         spaceBetween={30}
@@ -44,6 +45,7 @@ const AllBrands = () => {
         <SwiperSlide><img src={samsungBrand} alt="" /></SwiperSlide>
         <SwiperSlide><img src={samsungBrand} alt="" /></SwiperSlide>
       </Swiper>
+          <hr />
     </div>
     );
 };

@@ -12,7 +12,7 @@ const Featured = () => {
                 {
                     features.map(feature => 
                     
-                    <div className="my-8 pt-4 p-2 flex gap-3 justify-between border shadow-md">
+                    <div className="bg-base-100 my-8 pt-4 p-2 flex gap-3 justify-between border shadow-md">
                         <div className='w-1/3'>
                             <img className='w-full' src={photo} alt="Movie"/>
                         </div>

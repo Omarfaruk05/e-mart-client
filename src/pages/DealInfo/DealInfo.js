@@ -10,8 +10,8 @@ const DealInfo = () => {
                     <ShoppingCartIcon className='h-16 w-16 text-green-500'></ShoppingCartIcon>
                 </div>
                 <div>
-                    <h3 className='text-lg font-semibold'>FREE SHIP OVER $99</h3>
-                    <p>With order over $99</p>
+                    <h3 className='text-lg font-semibold'>FREE SHIP OVER</h3>
+                    <p>In $99</p>
                 </div>
             </div>
 
