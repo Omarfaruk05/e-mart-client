@@ -20,8 +20,8 @@ const Featured = () => {
                             <h2 className="text-xl font-semibold">Asus Zendpas 7</h2>
                             <p>Click the button to watch on Jetflix app.</p>
                             <div className='fons-semibold text-center flex justify-around gap-4 absolute bottom-1 right-2 w-full'>
-                                <p className='text-sm cursor-pointer px-2 py-1uppercase font-semibold w-1/2 btn btn-sm btn-primary '>Buy Now</p>
-                                <p className='text-sm cursor-pointer w-1/2  btn btn-sm btn-primary px-2 py-1 uppercase font-semibold'><ShoppingCartIcon className='h-4 mx-auto'></ShoppingCartIcon></p>
+                                <button className='text-sm cursor-pointer px-2 py-1uppercase font-semibold w-1/2 btn btn-sm btn-primary '>Buy Now</button>
+                                <button className='text-sm cursor-pointer w-1/2  btn btn-sm btn-primary px-2 py-1 uppercase font-semibold'><ShoppingCartIcon className='h-4 mx-auto'></ShoppingCartIcon></button>
                             </div>
                         </div>
                     </div>
