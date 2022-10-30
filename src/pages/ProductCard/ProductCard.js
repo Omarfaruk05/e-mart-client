@@ -16,13 +16,13 @@ const ProductCard = () => {
                             <StarIcon className='h-5 w-5 text-orange-400'></StarIcon>
                             <StarIcon className='h-5 w-5 text-orange-400'></StarIcon>
                             <StarIcon className='h-5 w-5 text-orange-400'></StarIcon>
-                            <StarIcon className='h-5 w-5'></StarIcon>
+                            <StarIcon className='h-5 w-5 text-gray-300'></StarIcon>
                         </div>
                     </div> 
                 </div>
                 <div className='fons-semibold text-center'>
-                <p className='text-sm bg-green-300 px-2 py-1 mb-2 uppercase font-semibold font'>Buy Now</p>
-                <p className='bg-green-300 text-sm py-1 px-2 uppercase font-semibold font'>Add to Cart</p>
+                <button className='btn btn-sm rounded-sm w-full text-sm btn-primary px-2 py-1 mb-2 uppercase font-semibold font'>Buy Now</button>
+                <button className='btn btn-sm rounded-sm w-full btn-primary text-sm py-1 px-2 uppercase font-semibold font'>Add to Cart</button>
                 </div>
             </div>
         </div>

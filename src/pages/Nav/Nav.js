@@ -22,19 +22,19 @@ const Nav = () => {
                         </ul>
                     </div>
                     <div>
-                        <p>Home</p>
+                        <button >Home</button>
                     </div>
                     <div>
-                        <p>Shop</p>
+                        <button>Shop</button>
                     </div>
                     <div>
-                        <p>Blog</p>
+                        <button>Blog</button>
                     </div>
                     <div>
-                        <p>Contact</p>
+                        <button>Contact</button>
                     </div>
                     <div>
-                        <p>About</p>
+                        <button>About</button>
                     </div>
                 </div>
             </div>
