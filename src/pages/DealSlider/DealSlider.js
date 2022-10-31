@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 import "./DealSlider.css";
 
 // import required modules
-import { Parallax, Pagination, Navigation } from "swiper";
+import { Parallax, Pagination, Navigation, Autoplay } from "swiper";
 
 
 const DealSlider = () => {
@@ -23,13 +23,17 @@ const DealSlider = () => {
             "--swiper-pagination-color": "#ffff",
             "height": "500px",
           }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           speed={600}
           parallax={true}
           pagination={{
             clickable: true,
           }}
           navigation={true}
-          modules={[Parallax, Pagination, Navigation]}
+          modules={[Autoplay, Parallax, Pagination, Navigation]}
           className="mySwiper"
         >
           <div
