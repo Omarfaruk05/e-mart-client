@@ -63,7 +63,7 @@ const NavComponent = ({children}) => {
             </div> 
             <div className="drawer-side">
                 <label htmlFor="my-drawer-3" className="drawer-overlay"></label> 
-                <ul className="menu p-4 overflow-y-auto w-40 bg-base-100">
+                <ul className="menu p-4 overflow-y-auto w-60 md:w-72 bg-base-100">
                 {/* <!-- Sidebar content here --> */}
                 <li><a>Sidebar Item 1</a></li>
                 <li><a>Sidebar Item 2</a></li>

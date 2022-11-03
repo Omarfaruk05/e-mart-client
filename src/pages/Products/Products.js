@@ -23,7 +23,7 @@ const Products = () => {
                         setMinRange={setMinRange}
                         setMaxRange={setMaxRange}
 
-                        className="w-1/4"></ProductsFilter>
+                        className="w-1/4 fixed top-0"></ProductsFilter>
                         <div className='lg:w-3/4 mx-4 '>
                             <div className='my-2'>
                                 <button className='btn btn-sm btn-primary font-bold m-[2px] px-8'>Walton</button>
