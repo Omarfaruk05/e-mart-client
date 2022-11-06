@@ -1,4 +1,5 @@
 import { TrashIcon } from '@heroicons/react/24/solid';
+import { Link } from 'react-router-dom';
 import productPhoto from "../../assets/discount-photo/disouunt-1.png"
 
 const ShopingCart = ({showCart, setShowCart}) => {
@@ -20,7 +21,7 @@ const ShopingCart = ({showCart, setShowCart}) => {
                                     <img className='' src={productPhoto} alt="" />
                                 </div>
                                 <div className='text-lg mt-2 col-span-3'>
-                                    <p className='text-normal'>Asus Zendpus 7 dfafffsss ffsdffs gdsfgdfg</p>
+                                    <p className='text-normal'>Asus Zendpus 7</p>
                                     <p className='text-lg font-bold'>
                                         <span className='mr-2'>$120</span>
                                         <span className='mr-2'>X</span>
@@ -51,7 +52,7 @@ const ShopingCart = ({showCart, setShowCart}) => {
                         <p>Total</p>
                         <p className='font-bold'>$120000</p>
                     </div>
-                    <button className=' mt-1 btn w-60 md:w-96 rounded-none bg-orange-500 text-white font-bold'>Checkout</button>
+                    <Link to={"cart-items"}><button  onClick={()=>setShowCart(!showCart)} className=' mt-1 btn w-60 md:w-96 rounded-none bg-orange-500 text-white font-bold'>Checkout</button></Link>
                 </div>
             </div>
         </div>

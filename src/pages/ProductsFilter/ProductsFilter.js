@@ -24,9 +24,9 @@ const ProductsFilter = () => {
                     </div>
                     <hr />
                     <div className={arroPrice ? 'flex gap-5 justify-between items-center mt-4': "hidden"}>
-                        <input className='input input-bordered w-full ' type="text" name="" id="" />
+                        <input className='input  input-sm input-bordered w-full ' type="text" name="" id="" />
                         <p>to</p>
-                        <input className='input input-bordered w-full' type="text" name="" id="" />
+                        <input className='input input-sm input-bordered w-full' type="text" name="" id="" />
                     </div>
                </div>
                <div className='my-4 p-4 mx-2 rounded-lg bg-slate-100'>
