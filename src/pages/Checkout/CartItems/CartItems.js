@@ -1,6 +1,7 @@
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftIcon, ArrowRightIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { TrashIcon } from '@heroicons/react/24/solid';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import backgroundImage from "../../../assets/banner/bg-t.png"
 import productPhoto from "../../../assets/discount-photo/disouunt-1.png"
 
@@ -24,10 +25,10 @@ const CartItems = () => {
     }
 
     return (
-        <div  style={{backgroundImage: `url(${backgroundImage})`}}>
-            <div>
-                <div className='bg-base-100'>
-                    <div className='pt-10 pb-4 mb-8 max-w-7xl mx-auto'>
+        <div style={{backgroundImage: `url(${backgroundImage})`}}>
+            <div className='max-w-7xl mx-auto'>
+                <div className='bg-base-100 mx-2 rounded-b-lg'>
+                    <div className='pt-10 pb-4 mb-8'>
                         <ul className="steps text-2xl w-full">
                             <li data-content="✓" className="step step-primary"><span className='text-lg uppercase mt-2 text-primary'>Cart Items</span></li>
                             <li data-content="✕" className="step step-natural"><span className='text-lg uppercase mt-2 text-orange-500'>Delivery</span></li>
@@ -37,7 +38,7 @@ const CartItems = () => {
                     </div>
                 </div>
                 {/* product table  */}
-                <div className='max-w-7xl mx-auto rounded-lg my-4'>
+                <div className='rounded-lg my-4'>
                     <div className='hidden md:grid justify-between items-center grid-cols-4 mx-2 rounded-t-lg p-2 bg-slate-200'>
                         {/* heading  */}
                         <h3 className='text-lg font-bold uppercase col-span-2'>Product</h3>
@@ -52,8 +53,8 @@ const CartItems = () => {
                             <>
                             <div className='grid justify-between items-center grid-cols-1 md:grid-cols-4 gap-2 bg-base-100 mx-2 text-center md:text-start relative'>
                                 
-                            <div className='absolute right-4'>
-                                    <button className='btn btn-outline btn-circle btn-xs'>X</button>
+                                <div className='absolute right-2'>
+                                    <button className='btn btn-link btn-xs'><TrashIcon className='w-5 text-red-500'></TrashIcon></button>
                                 </div>
                                 {/* product  */}
                                 <div className='md:col-span-2 flex items-center justify-center md:justify-start'>
@@ -107,12 +108,25 @@ const CartItems = () => {
                         </div>
                         <h2 className='text-lg md:text-2xl font-bold uppercase text-orange-600'><span className='mr-2'>Total :</span><span>$ 150</span></h2>
                     </div>
+                    <div className='flex justify-between'>
                     <div className='text-center'>
-                        <button className=' md:float-right mx-2 btn btn-lg btn-warning text-white font-bold my-4'>
-                            <span><ShoppingCartIcon className='w-7 h-7 mr-2'></ShoppingCartIcon></span>
-                            <span>Proceed to Delivery</span>
-                        </button>
+                        <Link to={"/cart-items"}>
+                            <button className='mx-2 btn btn-outline font-bold my-4 rounded-sm'>
+                                <span><ArrowLeftIcon className='w-5'></ArrowLeftIcon></span>
+                                <span className='mt-1 ml-2 pr-3'>Back</span>
+                            </button>
+                        </Link>
                     </div>
+                    <div className='text-center'>
+                        <Link to={"/delivery"}>
+                            <button className='mx-2 btn btn-warning text-white font-bold my-4 rounded-sm'>
+                                <span><ShoppingCartIcon className='w-5 mr-2'></ShoppingCartIcon></span>
+                                <span className='mt-1 mr-2'>Proceed to Delivery</span>
+                                <span><ArrowRightIcon className='w-5'></ArrowRightIcon></span>
+                            </button>
+                        </Link>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>

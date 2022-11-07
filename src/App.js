@@ -7,6 +7,8 @@ import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Footer from "./pages/Footer/Footer"
 import Products from './pages/Products/Products';
 import CartItems from './pages/Checkout/CartItems/CartItems';
+import Delivery from './pages/Checkout/Delivery/Delivery';
+import Payment from './pages/Checkout/Payment/Payment';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path='/details' element={<ProductDetails></ProductDetails>}></Route>
           <Route path='/products' element={<Products></Products>}></Route>
           <Route path='/cart-items' element={<CartItems></CartItems>}></Route>
+          <Route path='/delivery' element={<Delivery></Delivery>}></Route>
+          <Route path='/payment' element={<Payment></Payment>}></Route>
       </Routes>
       <Footer></Footer>
     </NavComponent>
