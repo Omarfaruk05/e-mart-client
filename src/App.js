@@ -7,8 +7,9 @@ import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Footer from "./pages/Footer/Footer"
 import Products from './pages/Products/Products';
 import CartItems from './pages/Checkout/CartItems/CartItems';
-import Delivery from './pages/Checkout/Delivery/Delivery';
+import Delivery from './pages/Checkout/ConfirmOrder/ConfirmOrder';
 import Payment from './pages/Checkout/Payment/Payment';
+import Receipt from './pages/Checkout/Receipt/Receipt';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/cart-items' element={<CartItems></CartItems>}></Route>
           <Route path='/delivery' element={<Delivery></Delivery>}></Route>
           <Route path='/payment' element={<Payment></Payment>}></Route>
+          <Route path='/receipt' element={<Receipt></Receipt>}></Route>
       </Routes>
       <Footer></Footer>
     </NavComponent>

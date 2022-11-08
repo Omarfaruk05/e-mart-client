@@ -1,11 +1,11 @@
-import { ArrowLeftIcon, ArrowRightIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import backgroundImage from "../../../assets/banner/bg-t.png";
 
 
-const Delivery = () => {
+const ConfirmOrder = () => {
     const [user, setUser] = useState(false);
     const [account, setAccount] = useState(false);
     const cartItems = [1, 2, 3, 5];
@@ -18,7 +18,7 @@ const Delivery = () => {
                     <div className='pt-10 pb-4 mb-8'>
                         <ul className="steps text-2xl w-full">
                             <li data-content="✓" className="step step-primary"><span className='text-lg uppercase mt-2 text-primary'>Cart Items</span></li>
-                            <li data-content="✓" className="step step-primary"><span className='text-lg uppercase mt-2 text-green-500'>Delivery</span></li>
+                            <li data-content="◉" className="step step-primary"><span className='text-lg uppercase mt-2 text-orange-500'>Confirm Order</span></li>
                             <li data-content="✕" className="step step-natural"><span className='text-lg uppercase mt-2 text-orange-500'>Payment</span></li>
                             <li data-content="✕" className="step step-natural"><span className='text-lg uppercase mt-2 text-orange-500'>Receipt</span></li>
                         </ul>
@@ -47,6 +47,9 @@ const Delivery = () => {
                                 </div>
                                 <div>
                                     <input className='input input-bordered rounded-sm w-full mb-4' type="text" name="contactNumber" id="" placeholder='Phone: *' required />
+                                </div>
+                                <div>
+                                    <textarea className='textarea textarea-bordered rounded-sm w-full mb-4 h-32' type="text" name="address" id="" placeholder='Detail Address: *' required />
                                 </div>
                                 {
                                 !user &&
@@ -154,4 +157,4 @@ const Delivery = () => {
     );
 };
 
-export default Delivery;
+export default ConfirmOrder;
