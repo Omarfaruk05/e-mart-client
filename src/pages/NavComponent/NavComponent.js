@@ -3,6 +3,7 @@ import { UserIcon, ShoppingCartIcon, MagnifyingGlassIcon} from '@heroicons/react
 import ShopingCart from '../ShopingCart/ShopingCart';
 import Header from '../Header/Header';
 import { Link } from 'react-router-dom';
+import LoginRegistration from '../LoginRegistration/LoginRegistration';
 
 const NavComponent = ({children}) => {
     const [showSearch, setShowSearch] = useState(false);
@@ -41,7 +42,8 @@ const NavComponent = ({children}) => {
                     <ul className="menu menu-horizontal">
 
                     {/* <!-- Navbar menu content here --> */}
-                    <li><a><UserIcon className=' h-6 w-6'></UserIcon></a></li>
+                    <li><a><label htmlFor="login-registration-modal"><UserIcon className=' h-6 w-6'></UserIcon></label></a></li>
+                    <LoginRegistration></LoginRegistration>
                     <li onClick={()=>setShowCart(!showCart)}>
                         <a>
                             <ShoppingCartIcon  className=' h-6 w-6'></ShoppingCartIcon> 
