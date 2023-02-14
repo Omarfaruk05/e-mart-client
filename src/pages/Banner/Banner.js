@@ -13,7 +13,8 @@ import "swiper/css/navigation";
 import "./Banner.css";
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination } from "swiper";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -22,37 +23,37 @@ const Banner = () => {
         <div className="w-1/5">
           <ul className="bg-slate-700 text-white rounded-sm">
             <li className="border-b p-2 cursor-pointer hover:bg-slate-600">
-              <a>Computer & Accessories</a>
+              <Link>Computer & Accessories</Link>
             </li>
             <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">
-              <a>Laptop</a>
+              <Link>Laptop</Link>
             </li>
             <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">
-              <a>Mobile & Tablet</a>
+              <Link>Mobile & Tablet</Link>
             </li>
             <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">
-              <a>Camera & Video</a>
+              <Link>Camera & Video</Link>
             </li>
             <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">
-              <a>Audio & Headphones</a>
+              <Link>Audio & Headphones</Link>
             </li>
             <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">
-              <a>Router</a>
+              <Link>Router</Link>
             </li>
             <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">
-              <a>Telivition & Desplay</a>
+              <Link>Telivition & Desplay</Link>
             </li>
             <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">
-              <a>Electronics</a>
+              <Link>Electronics</Link>
             </li>
             <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">
-              <a>Office Supplies</a>
+              <Link>Office Supplies</Link>
             </li>
             <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">
-              <a>Home Appliance</a>
+              <Link>Home Appliance</Link>
             </li>
             <li className="p-1 cursor-pointer hover:bg-slate-600">
-              <a>Printer & Ink</a>
+              <Link>Printer & Ink</Link>
             </li>
           </ul>
         </div>
