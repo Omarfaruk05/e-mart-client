@@ -128,5 +128,69 @@
         },
         "price": 500,
         "description" : ""
+    },
+    {
+        "name": "AirPodss Pro 3rd Gen Wireless Bluetooth Headphone Painless Wearing Earbuds with Type C to Lightning Cable",
+        "brand": "No Brand",
+        "productImage":
+            ["https://i.ibb.co/cYGKRGy/cdb82ba66d2cc7e29e694046963c5adb.jpg", "https://i.ibb.co/ZYnCGGB/424eb5df6400bba7d3b5965ed1116d7a.jpg", "https://i.ibb.co/25tphb5/9b8f94db4163fadddf13a337337ae51a.jpg", "https://i.ibb.co/G00jc7G/48f15aa6dc01949283030ea65665b5b9.jpg", "https://i.ibb.co/ZYnCGGB/424eb5df6400bba7d3b5965ed1116d7a.jpg"],
+        "productImageWeb":
+            ["https://static-01.daraz.com.bd/p/ea6abcc4a46d2c2c48dfcabdf78707b3.jpg", "https://static-01.daraz.com.bd/p/424eb5df6400bba7d3b5965ed1116d7a.jpg", "https://static-01.daraz.com.bd/p/48f15aa6dc01949283030ea65665b5b9.jpg", "https://static-01.daraz.com.bd/p/9b8f94db4163fadddf13a337337ae51a.jpg"],
+        "productDetails":{
+            "Bluetooth Verssion": "v4.0",
+            "Frequency": "20-20kHzOriginal",
+            "Operating Range":"10m",
+            "Driver Size": "13mm*2 Drivers",
+            "Battery": "250mAh",
+            "Talk Time": "About 4hours",
+            "Music Time": "About 5hours",
+            "Charging Time": "About 2hour",
+            "Charging Prot": "Type C",
+            "Driver Impedance": "32±10%ohm",
+            "Sensitivity": "109±3dB",
+            "Water Resistance": "IPX5"
+
+        },
+        "Key Features": {
+            "Battery": "250mAh",
+            "Talk Time": "About 4hours",
+            "Music Time": "About 5hours",
+            "Charging Time": "About 2hour",
+            "Charging Prot": "Type C"
+        },
+        "price": 3250,
+        "description" : ""
+    },
+    {
+        "name": "AirPodss Pro 3rd Gen Wireless Bluetooth Painless Wearing Earbuds 3",
+        "brand": "No Brand",
+        "productImage":
+            ["https://i.ibb.co/svGmnWM/bb24b075b6b5adeda559e88ce13261f5.jpg", "https://i.ibb.co/frn9k5v/e62c220797b3fc39d4dc30801f2d2d81.jpg", "https://i.ibb.co/ZKHYJbX/b97568944b978a248d833f16e61198f2.jpg"],
+        "productImageWeb":
+            ["https://static-01.daraz.com.bd/p/bb24b075b6b5adeda559e88ce13261f5.jpg", "https://static-01.daraz.com.bd/p/e62c220797b3fc39d4dc30801f2d2d81.jpg", "https://static-01.daraz.com.bd/p/b97568944b978a248d833f16e61198f2.jpg"],
+        "productDetails":{
+            "Bluetooth Verssion": "v4.0",
+            "Frequency": "20-20kHzOriginal",
+            "Operating Range":"10m",
+            "Driver Size": "13mm*2 Drivers",
+            "Battery": "250mAh",
+            "Talk Time": "About 4 hours",
+            "Music Time": "About 6 hours",
+            "Charging Time": "About 2hour",
+            "Charging Prot": "Type C",
+            "Driver Impedance": "32±10%ohm",
+            "Sensitivity": "109±3dB",
+            "Water Resistance": "IPX5"
+
+        },
+        "Key Features": {
+            "Battery": "250mAh",
+            "Talk Time": "About 4hours",
+            "Music Time": "About 5hours",
+            "Charging Time": "About 2hour",
+            "Charging Prot": "Type C"
+        },
+        "price": 1450,
+        "description" : ""
     }
 ]
