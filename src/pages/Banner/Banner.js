@@ -20,9 +20,9 @@ const Banner = () => {
   return (
     <div className="max-w-7xl mx-auto mt-4">
       <div className="flex gap-5">
-        <div className="w-1/5">
-          <ul className="bg-slate-700 text-white rounded-sm">
-            <li className="border-b p-2 cursor-pointer hover:bg-slate-600">
+        <div className="w-1/5 ml-2 hidden lg:block">
+          <ul className="bg-slate-700 text-white  rounded-sm">
+            <li className="border-b p-1 cursor-pointer hover:bg-slate-600">
               <Link>Computer & Accessories</Link>
             </li>
             <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">
@@ -82,7 +82,7 @@ const Banner = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 mx-2">
         <marquee
           className="p-2 rounded-full font-semibold text-slate-800"
           direction="left"

@@ -1,0 +1,105 @@
+[
+    {
+        "name": "COLMI P28 Plus Calling Smart Watch",
+        "brand": "Colmi",
+        "productImage":
+            ["https://i.ibb.co/yVnLrrc/664967b37772b46e13dcc280457f48d4-jpg-720x720-jpg.webp", "https://i.ibb.co/QvTV4kx/1bd97eaed3a7b2335439f3ed3f057603-jpg-720x720-jpg.webp", "https://i.ibb.co/yPCG5MY/ca443edeb96d2e52f961e9214709adfa-jpg-720x720-jpg.webp", "https://i.ibb.co/L61dCj6/daf61ac25bddab5fb0663ac59422ef4e-jpg-720x720-jpg.webp"],
+        "productImageWeb":
+            ["https://static-01.daraz.com.bd/p/664967b37772b46e13dcc280457f48d4.jpg_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/1bd97eaed3a7b2335439f3ed3f057603.jpg_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/ca443edeb96d2e52f961e9214709adfa.jpg_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/daf61ac25bddab5fb0663ac59422ef4e.jpg_720x720.jpg_.webp"],
+        "productDetails":{
+            "Model": "P28 Plus",
+            "Screen": "1.69inch TFT Touch Screen, 240x280 Resolution",
+            "Processor": "Realtek RTL8762CK + JieLi AC6963A",
+            "Main chipset": "Realtek RTL8762CK",
+            "Secondary chipset": "JieLi AC6963A",
+            "HR sencor": "LC11",
+            "G-sencor": "SC7A20",
+            "Battery life": "3~7days",
+            "Battery":"235mAh",
+            "Charging Prot": "Type C",
+            "Driver Impedance": "32±10%ohm",
+            "Sensitivity": "109±3dB",
+            "Water Resistance": "IP67"
+
+        },
+        "Key Features": {
+            "Model": "P28 Plus",
+            "Screen": "1.69inch TFT Touch Screen, 240x280 Resolution",
+            "Battery life": "3~7days",
+            "Charging Prot": "Type C",
+            "Water Resistance": "IP67",
+            "Battery":"235mAh"
+        },
+        "price": 1950,
+        "description" : ""
+    },
+    {
+        "name": "Haylou RS4 Plus AMOLED Display Smartwatch",
+        "brand": "Haylou",
+        "productImage":
+            ["https://i.ibb.co/YZ6Fwfk/b0002c032c2173692738a26c19792b42-jpg-720x720-jpg.webp", "https://i.ibb.co/smVYxHJ/3b602e6662696accf573fc97ce54f839-jpg-720x720-jpg.webp", "https://i.ibb.co/hyGT4Pp/991e1f3b739dfacf63d3f268d4cb2764-jpg-720x720-jpg.webp"],
+        "productImageWeb":
+            ["https://static-01.daraz.com.bd/p/b0002c032c2173692738a26c19792b42.jpg_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/3b602e6662696accf573fc97ce54f839.jpg_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/991e1f3b739dfacf63d3f268d4cb2764.jpg_720x720.jpg_.webp"],
+        "productDetails":{
+            "Model": "RS4 Plus",
+            "Screen": "1.78inch Retina AMOLED Display",
+            "Body": "Craft with Metal",
+            "Processor": "Realtek RTL8762CK + JieLi AC6963A",
+            "Main chipset": "Realtek RTL8762CK",
+            "Secondary chipset": "JieLi AC6963A",
+            "HR sencor": "LC11",
+            "Mode": "105 Sports Mode",
+            "Battery life": "3~7days",
+            "Battery":"235mAh",
+            "Charging Prot": "Type C",
+            "Sim Slots": "No",
+            "Strap Material": "Silica gel",
+            "Water Resistance": "IP67"
+
+        },
+        "Key Features": {
+            "Model": "P28 Plus",
+            "Screen": "1.69inch TFT Touch Screen, 240x280 Resolution",
+            "Battery life": "3~7days",
+            "Charging Prot": "Type C",
+            "Water Resistance": "IP67",
+            "Battery":"235mAh"
+        },
+        "price": 4550,
+        "description" : "High-definition retina-level AMOLED displays Wt368*448 pixels with unprecedented visual clarity. The 1.78-inch large screen provides you with a precise and clear experience anytime, anywhere. The 60HZ refresh rate continues to optimize the user experience, which is rare for currently available round smartwatches. Multi-Ul main menu set your style and other Cellular models 360-degreeunrestrained smooth sliding and other three super operations. Show personality and fit your style. Menstrual cycle reminders for women can not only record menstrual periods and ovulation periods but also provide more intimate reminders."
+    },
+    {
+        "name": "Kieslect Lora Lady Calling Smart Watch Global Version",
+        "brand": "Kieslect",
+        "productImage":
+            ["https://i.ibb.co/YZ6Fwfk/b0002c032c2173692738a26c19792b42-jpg-720x720-jpg.webp", "https://i.ibb.co/smVYxHJ/3b602e6662696accf573fc97ce54f839-jpg-720x720-jpg.webp", "https://i.ibb.co/hyGT4Pp/991e1f3b739dfacf63d3f268d4cb2764-jpg-720x720-jpg.webp"],
+        "productImageWeb":
+            ["https://static-01.daraz.com.bd/p/787f128ffef96d36ffa58b7f85b622a9.jpg_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/74f6990eb5d064342bc6a6dce143630c.jpg_720x720.jpg_.webp"],
+        "productDetails":{
+            "Screen": "Semi-Amoled Display",
+            "Body": "Craft with Metal",
+            "Processor": "Realtek RTL8762CK + JieLi AC6963A",
+            "Main chipset": "Realtek RTL8762CK",
+            "Secondary chipset": "JieLi AC6963A",
+            "HR sencor": "LC11",
+            "Mode": "70 Sports Mode",
+            "Battery life": "5 Days Battery Life",
+            "Battery":"280mAh",
+            "Charging Prot": "Type C",
+            "Sim Slots": "No",
+            "Strap Material": "Lather",
+            "Water Resistance": "IP68"
+
+        },
+        "Key Features": {
+            "Mode": "70 Sports Mode",
+            "Battery life": "5 Days Battery Life",
+            "Battery":"280mAh",
+            "Charging Prot": "Type C",
+            "Water Resistance": "IP68"
+        },
+        "price": 4550,
+        "description" : "High-definition retina-level AMOLED displays Wt368*448 pixels with unprecedented visual clarity. The 1.78-inch large screen provides you with a precise and clear experience anytime, anywhere. The 60HZ refresh rate continues to optimize the user experience, which is rare for currently available round smartwatches. Multi-Ul main menu set your style and other Cellular models 360-degreeunrestrained smooth sliding and other three super operations. Show personality and fit your style. Menstrual cycle reminders for women can not only record menstrual periods and ovulation periods but also provide more intimate reminders."
+    }
+    
+]

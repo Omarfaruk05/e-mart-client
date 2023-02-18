@@ -192,5 +192,94 @@
         },
         "price": 1450,
         "description" : ""
+    },
+    {
+        "name": "Super Bass Headphones Ear Hook - Ear Phone - Headphone - Ear Phone - Earphone",
+        "brand": "GADGETS BD",
+        "productImage":
+            ["https://i.ibb.co/S6dzs0x/681806cfb360d18012b8792d19178045-jpg-720x720-jpg.webp"],
+        "productImageWeb":
+            ["https://static-01.daraz.com.bd/p/mdc/681806cfb360d18012b8792d19178045.jpg_720x720.jpg_.webp"],
+        "productDetails":{
+            "Connectors": "3.5mm",
+            "Control Button": "YES",
+            "Active Noise-Cancellation":"NO",
+            "Style": "Ear Hook",
+            "Communication": "Wired",
+            "Vocalism Principle": "Dynamic",
+            "Volume Control": "Yes",
+            "Wireless Type": "None",
+            "Support Memory Card": "No",
+            "With Microphone": "No",
+            "Model Number": "C070",
+            "Resistance": "9Ω",
+            "Frequency Response Range": "20-20000Hz",
+            "Function": "Phone",
+            "Sensitivity": "105dB",
+            "Waterproof": "No",
+            "Is wireless": "No",
+            "Line Length": "1.3m",
+            "Plug Type": "Line Type"
+            
+
+        },
+        "Key Features": {
+            "Style": "Ear Hook",
+            "Communication": "Wired",
+            "Vocalism Principle": "Dynamic",
+            "Volume Control": "Yes",
+            "Wireless Type": "None",
+            "Support Memory Card": "No",
+            "Frequency Response Range": "20-20000Hz"
+        },
+        "price": 450,
+        "description" : ""
+    },
+    {
+        "name": "inpods 12 tws Wireless Pop-ups Bluetooth 5.0 headphone earphones headsets super bass sound earbuds for iOS Android (Black)",
+        "brand": "HQNB",
+        "productImage":
+            ["https://i.ibb.co/26XSRg6/0c0e26cb6645fae9b70ba6313566df7f-jpg-720x720-jpg.webp", "https://i.ibb.co/pZYxQyr/0f5c179e7792f411ebd7960a8442dc2b-jpg-720x720-jpg.webp", "https://i.ibb.co/kgDmQn7/d71a2b5e61f115ad26ac44f665d69475-jpg-720x720-jpg.webp", "https://i.ibb.co/DDJnytk/dea7cb2708b295e6b913d2c1714acdea-jpg-720x720-jpg.webp"],
+        "productImageWeb":
+            ["https://static-01.daraz.com.bd/p/dea7cb2708b295e6b913d2c1714acdea.jpg_720x720.jpg_.webp","https://static-01.daraz.com.bd/p/d71a2b5e61f115ad26ac44f665d69475.jpg_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/0f5c179e7792f411ebd7960a8442dc2b.jpg_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/0c0e26cb6645fae9b70ba6313566df7f.jpg_720x720.jpg_.webp"],
+        "productDetails":{
+            "Style": "Headphone",
+            "Certification": "CE",
+            "Origin": "CN(Origin)",
+            "Control Button": "Yes",
+            "Active Noise-Cancellation": "Yes",
+            "Communication": "True Wireless",
+            "Volume Contro": "Yes",
+            "Wireless Type": "Blutooth",
+            "Is wireless": "Yes",
+            "Max Output": "1mW",
+            "Support APP": "NO",
+            "Bluetooth Version": "5.0",
+            "Waterproof": "Yes",
+            "Battery": "250mAh",
+            "Frequency": "20-20kHzOriginal",
+            "Operating Range":"10m",
+            "Driver Size": "13mm*2 Drivers",
+            "Charging Time": "About 2hour",
+            "Charging Prot": "Type C",
+            "Driver Impedance": "32±10%ohm",
+            "Sensitivity": "123dB",
+            "Water Resistance": "IPX5"
+
+        },
+        "Key Features": {
+            "Control Button": "Yes",
+            "Communication": "True Wireless",
+            "Volume Contro": "Yes",
+            "Wireless Type": "Blutooth",
+            "Is wireless": "Yes",
+            "Max Output": "1mW",
+            "Support APP": "NO",
+            "Bluetooth Version": "5.0",
+            "Waterproof": "Yes",
+            "Battery": "250mAh"
+        },
+        "price": 850,
+        "description" : ""
     }
 ]
