@@ -1,5 +1,40 @@
 [
     {
+        "name": "Samsung Galaxy Watch5 - Smart Watch",
+        "brand": "Samsung",
+        "productImage":
+            ["https://i.ibb.co/3k8xWWg/0ab3270c8e4a31640c134595b4922ded-jpg-720x720-jpg.webp", "https://i.ibb.co/pryK21P/b8ca8ecc97881ad5b903ad706352cab5-jpg-720x720-jpg.webp", "https://i.ibb.co/NFb5ZHN/b178f8149900a3b0fea2c3c0fab119a0-jpg-720x720-jpg.webp", "https://i.ibb.co/zJz1691/0ae97bd99e3812347ba1740698aa5531-jpg-720x720-jpg.webp", "https://i.ibb.co/R42TmmJ/923e3d904937b7d553f5ba355780d752-jpg-720x720-jpg.webp", "https://i.ibb.co/Hz0Khd3/8d74a9d3b47ce7a853fd335a2f241589-jpg-720x720-jpg.webp"],
+        "productImageWeb":
+            ["https://static-01.daraz.com.bd/p/0ab3270c8e4a31640c134595b4922ded.jpg_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/b8ca8ecc97881ad5b903ad706352cab5.jpg_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/b178f8149900a3b0fea2c3c0fab119a0.jpg_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/0ae97bd99e3812347ba1740698aa5531.jpg_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/923e3d904937b7d553f5ba355780d752.jpg_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/8d74a9d3b47ce7a853fd335a2f241589.jpg_720x720.jpg_.webp"],
+        "productDetails":{
+            "Type": "Super AMOLED",
+            "Screen": "1.4 inches",
+            "Resolution" : "450 x 450 pixels",
+            "SIM": "eSIM",
+            "Bluetooth": "5.2, A2DP, LE",
+            "MemoryInternal": "16GB 1.5GB RAM",
+            "Weight": "33.5 g (44mm)",
+            "WLAN": "Wi-Fi 802.11 a/b/g/n, dual-band",
+            "HR sencor": "LC11",
+            "Dimensions": "44.4 x 43.3 x 9.8 mm (1.75 x 1.70 x 0.39 in)",
+            "Battery life": "7~12days",
+            "Battery":"Li-Ion 410 mAh, non-removable",
+            "Charging Prot": "Type C",
+            "Water Resistance": "IP67"
+
+        },
+        "Key Features": {
+            "Type": "Super AMOLED",
+            "Screen": "1.4 inches",
+            "Resolution" : "450 x 450 pixels",
+            "SIM": "eSIM",
+            "Bluetooth": "5.2, A2DP, LE",
+            "Battery life": "7~12days"
+        },
+        "price": 42999,
+        "description" : ""
+    },
+    {
         "name": "COLMI P28 Plus Calling Smart Watch",
         "brand": "Colmi",
         "productImage":
@@ -170,6 +205,41 @@
         },
         "price": 5648,
         "description" : "High-definition retina-level 2.05 inch HD large screen with 420*485 pexels of 320 PPI with unprecedented visual clarity. The 2.05-inch large screen provides you with a precise and clear experience anytime, anywhere. The 60HZ refresh rate continues to optimize the user experience, which is rare for currently available round smartwatches. Multi-Ul main menu set your style and other Cellular models 360-degreeunrestrained smooth sliding and other three super operations. Show personality and fit your style. Menstrual cycle reminders for women can not only record menstrual periods and ovulation periods but also provide more intimate reminders."
+    },
+    {
+        "name": "Amazfit T-Rex 2 Waterproof Smart Watch Smart Watch",
+        "brand": "AMAZFIT",
+        "productImage":
+            ["https://i.ibb.co/DgbcMP4/4c5022d6070df0382f6458c3bd1c044d-png-720x720-jpg.webp", "https://i.ibb.co/rpJkd3P/d943b6af1674cfe2c0ceaacc0f2f34d8-jpg-720x720-jpg.webp"],
+        "productImageWeb":
+            ["https://static-01.daraz.com.bd/p/4c5022d6070df0382f6458c3bd1c044d.png_720x720.jpg_.webp", "https://static-01.daraz.com.bd/p/d943b6af1674cfe2c0ceaacc0f2f34d8.jpg_720x720.jpg_.webp"],
+        "productDetails":{
+            "Model": "T-Rex 2",
+            "Resolution": " 420*485 pexels of 320 PPI",
+            "Body": "Craft with Metal",
+            "Bluetooth": "V5.0 with Call support",
+            "Charging interface": "Wireless",
+            "Gps movement tracing": "Yes",
+            "Style": "Rugged Design Quick Action button Customizable",
+            "Sound": "Built-in Speaker and Microphone",
+            "Mode": "150+ Sports Mode",
+            "Battery life": "25 Days Battery Life",
+            "Battery":"500mAh",
+            "Sim Slots": "No",
+            "Strap Material": "Silica gel",
+            "Water Resistance": "IP68"
+
+        },
+        "Key Features": {
+            "Model": "T-Rex 2",
+            "Battery life": "25 Days Battery Life",
+            "Body": "Craft with Metal",
+            "Bluetooth": "V5.0 with Call support",
+            "Charging interface": "Wireless",
+            "Gps movement tracing": "Yes"
+        },
+        "price": 17948,
+        "description" : "High-definition retina-level 420*485 pexels of 320 PPI with unprecedented visual clarity. The 2.05-inch large screen provides you with a precise and clear experience anytime, anywhere. The 60HZ refresh rate continues to optimize the user experience, which is rare for currently available round smartwatches. Multi-Ul main menu set your style and other Cellular models 360-degreeunrestrained smooth sliding and other three super operations. Show personality and fit your style. Menstrual cycle reminders for women can not only record menstrual periods and ovulation periods but also provide more intimate reminders."
     }
     
 ]
