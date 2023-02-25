@@ -1,6 +1,7 @@
 [
     {
-        "name": "Samsung Galaxy Watch5 - Smart Watch",
+        "category": "SmartWatch",
+        "productName": "Samsung Galaxy Watch5 - Smart Watch",
         "brand": "Samsung",
         "productImage":
             ["https://i.ibb.co/3k8xWWg/0ab3270c8e4a31640c134595b4922ded-jpg-720x720-jpg.webp", "https://i.ibb.co/pryK21P/b8ca8ecc97881ad5b903ad706352cab5-jpg-720x720-jpg.webp", "https://i.ibb.co/NFb5ZHN/b178f8149900a3b0fea2c3c0fab119a0-jpg-720x720-jpg.webp", "https://i.ibb.co/zJz1691/0ae97bd99e3812347ba1740698aa5531-jpg-720x720-jpg.webp", "https://i.ibb.co/R42TmmJ/923e3d904937b7d553f5ba355780d752-jpg-720x720-jpg.webp", "https://i.ibb.co/Hz0Khd3/8d74a9d3b47ce7a853fd335a2f241589-jpg-720x720-jpg.webp"],
@@ -23,7 +24,7 @@
             "Water Resistance": "IP67"
 
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Type": "Super AMOLED",
             "Screen": "1.4 inches",
             "Resolution" : "450 x 450 pixels",
@@ -32,10 +33,13 @@
             "Battery life": "7~12days"
         },
         "price": 42999,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : ""
     },
     {
-        "name": "COLMI P28 Plus Calling Smart Watch",
+        "category": "SmartWatch",
+        "productName": "COLMI P28 Plus Calling Smart Watch",
         "brand": "Colmi",
         "productImage":
             ["https://i.ibb.co/yVnLrrc/664967b37772b46e13dcc280457f48d4-jpg-720x720-jpg.webp", "https://i.ibb.co/QvTV4kx/1bd97eaed3a7b2335439f3ed3f057603-jpg-720x720-jpg.webp", "https://i.ibb.co/yPCG5MY/ca443edeb96d2e52f961e9214709adfa-jpg-720x720-jpg.webp", "https://i.ibb.co/L61dCj6/daf61ac25bddab5fb0663ac59422ef4e-jpg-720x720-jpg.webp"],
@@ -57,7 +61,7 @@
             "Water Resistance": "IP67"
 
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Model": "P28 Plus",
             "Screen": "1.69inch TFT Touch Screen, 240x280 Resolution",
             "Battery life": "3~7days",
@@ -66,10 +70,13 @@
             "Battery":"235mAh"
         },
         "price": 1950,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : ""
     },
     {
-        "name": "Haylou RS4 Plus AMOLED Display Smartwatch",
+        "category": "SmartWatch",
+        "productName": "Haylou RS4 Plus AMOLED Display Smartwatch",
         "brand": "Haylou",
         "productImage":
             ["https://i.ibb.co/YZ6Fwfk/b0002c032c2173692738a26c19792b42-jpg-720x720-jpg.webp", "https://i.ibb.co/smVYxHJ/3b602e6662696accf573fc97ce54f839-jpg-720x720-jpg.webp", "https://i.ibb.co/hyGT4Pp/991e1f3b739dfacf63d3f268d4cb2764-jpg-720x720-jpg.webp"],
@@ -92,7 +99,7 @@
             "Water Resistance": "IP67"
 
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Model": "P28 Plus",
             "Screen": "1.69inch TFT Touch Screen, 240x280 Resolution",
             "Battery life": "3~7days",
@@ -101,10 +108,13 @@
             "Battery":"235mAh"
         },
         "price": 4550,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : "High-definition retina-level AMOLED displays Wt368*448 pixels with unprecedented visual clarity. The 1.78-inch large screen provides you with a precise and clear experience anytime, anywhere. The 60HZ refresh rate continues to optimize the user experience, which is rare for currently available round smartwatches. Multi-Ul main menu set your style and other Cellular models 360-degreeunrestrained smooth sliding and other three super operations. Show personality and fit your style. Menstrual cycle reminders for women can not only record menstrual periods and ovulation periods but also provide more intimate reminders."
     },
     {
-        "name": "Kieslect Lora Lady Calling Smart Watch Global Version",
+        "category": "SmartWatch",
+        "productName": "Kieslect Lora Lady Calling Smart Watch Global Version",
         "brand": "Kieslect",
         "productImage":
             ["https://i.ibb.co/582PJpS/787f128ffef96d36ffa58b7f85b622a9-jpg-720x720-jpg.webp", "https://i.ibb.co/xYD4bjN/74f6990eb5d064342bc6a6dce143630c-jpg-720x720-jpg.webp"],
@@ -126,7 +136,7 @@
             "Water Resistance": "IP68"
 
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Mode": "70 Sports Mode",
             "Battery life": "5 Days Battery Life",
             "Battery":"280mAh",
@@ -134,10 +144,13 @@
             "Water Resistance": "IP68"
         },
         "price": 4550,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : "High-definition retina-level AMOLED displays Wt368*448 pixels with unprecedented visual clarity. The 1.78-inch large screen provides you with a precise and clear experience anytime, anywhere. The 60HZ refresh rate continues to optimize the user experience, which is rare for currently available round smartwatches. Multi-Ul main menu set your style and other Cellular models 360-degreeunrestrained smooth sliding and other three super operations. Show personality and fit your style. Menstrual cycle reminders for women can not only record menstrual periods and ovulation periods but also provide more intimate reminders."
     },
     {
-        "name": "HW8 Max Smartwatch 1.99 inch Retina Full Screen Smart Watch Series 8 NFC Watch Calculator Voice Bluetooth Call Sport Fitness Watch",
+        "category": "SmartWatch",
+        "productName": "HW8 Max Smartwatch 1.99 inch Retina Full Screen Smart Watch Series 8 NFC Watch Calculator Voice Bluetooth Call Sport Fitness Watch",
         "brand": "XUNDD",
         "productImage":
             ["https://i.ibb.co/VBMfjh6/ccb5893b1deb8369cb04e34852334420-jpg-720x720-jpg.webp", "https://i.ibb.co/Vjn6tL6/0decc9113097c53690e1e303d8c36720-jpg-720x720-jpg.webp", "https://i.ibb.co/3yBffd8/46b738b667aa35553a72b09e8750fb4e-jpg-720x720-jpg.webp", "https://i.ibb.co/5L0g0bz/d65f4ec34d9bb584263fd32d0ca1499e-jpg-720x720-jpg.webp"],
@@ -160,17 +173,20 @@
             "Water Resistance": "IP68"
 
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Screen": "1.99 inch ultra-wide full touch color screen, Very very narrow screen bezels,420*480 Resolution",
             "Body": "Craft with Metal",
             "Memory": "128 memory ,10 Local watchface",
             "Sound": "Built-in Speaker and Microphone"
         },
         "price": 4580,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : "High-definition retina-level AMOLED displays Wt368*448 pixels with unprecedented visual clarity. The 1.78-inch large screen provides you with a precise and clear experience anytime, anywhere. The 60HZ refresh rate continues to optimize the user experience, which is rare for currently available round smartwatches. Multi-Ul main menu set your style and other Cellular models 360-degreeunrestrained smooth sliding and other three super operations. Show personality and fit your style. Menstrual cycle reminders for women can not only record menstrual periods and ovulation periods but also provide more intimate reminders."
     },
     {
-        "name": "Kieslect KR Pro Smart Calling AMOLED Watch with Crown Nevigation Sp02 & Heart Rate Tracking (Dual Strap) - Black",
+        "category": "SmartWatch",
+        "productName": "Kieslect KR Pro Smart Calling AMOLED Watch with Crown Nevigation Sp02 & Heart Rate Tracking (Dual Strap) - Black",
         "brand": "Kieslect",
         "productImage":
             ["https://i.ibb.co/rykYjKH/8fe4b7fe0c502f2b84b8d703ef3c23b6-jpg-720x720-jpg.webp", "https://i.ibb.co/G5J5qNd/d27db7ada58b7cf63f148c782e0a9424-jpg-720x720-jpg.webp", "https://i.ibb.co/KVXK1Qx/57dd90a0077ce33ac56800c7a87d3f36-jpg-720x720-jpg.webp"],
@@ -195,7 +211,7 @@
             "Water Resistance": "IP68"
 
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Model": "HW8 Ultra Max",
             "Screen": "2.05 inch HD large screen",
             "Resolution": " 420*485 pexels of 320 PPI",
@@ -204,10 +220,13 @@
             "Charging interface": "Wireless"
         },
         "price": 5648,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : "High-definition retina-level 2.05 inch HD large screen with 420*485 pexels of 320 PPI with unprecedented visual clarity. The 2.05-inch large screen provides you with a precise and clear experience anytime, anywhere. The 60HZ refresh rate continues to optimize the user experience, which is rare for currently available round smartwatches. Multi-Ul main menu set your style and other Cellular models 360-degreeunrestrained smooth sliding and other three super operations. Show personality and fit your style. Menstrual cycle reminders for women can not only record menstrual periods and ovulation periods but also provide more intimate reminders."
     },
     {
-        "name": "Amazfit T-Rex 2 Waterproof Smart Watch Smart Watch",
+        "category": "SmartWatch",
+        "productName": "Amazfit T-Rex 2 Waterproof Smart Watch Smart Watch",
         "brand": "AMAZFIT",
         "productImage":
             ["https://i.ibb.co/DgbcMP4/4c5022d6070df0382f6458c3bd1c044d-png-720x720-jpg.webp", "https://i.ibb.co/rpJkd3P/d943b6af1674cfe2c0ceaacc0f2f34d8-jpg-720x720-jpg.webp"],
@@ -230,7 +249,7 @@
             "Water Resistance": "IP68"
 
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Model": "T-Rex 2",
             "Battery life": "25 Days Battery Life",
             "Body": "Craft with Metal",
@@ -239,6 +258,8 @@
             "Gps movement tracing": "Yes"
         },
         "price": 17948,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : "High-definition retina-level 420*485 pexels of 320 PPI with unprecedented visual clarity. The 2.05-inch large screen provides you with a precise and clear experience anytime, anywhere. The 60HZ refresh rate continues to optimize the user experience, which is rare for currently available round smartwatches. Multi-Ul main menu set your style and other Cellular models 360-degreeunrestrained smooth sliding and other three super operations. Show personality and fit your style. Menstrual cycle reminders for women can not only record menstrual periods and ovulation periods but also provide more intimate reminders."
     }
     

@@ -1,6 +1,7 @@
 [
     {
-        "name": "Imilab Imiki T11 TWS Bluetooth 5.0 IPX7 Waterproof Wireless Earphones - Gunmetal",
+        "category": "Headphone",
+        "productName": "Imilab Imiki T11 TWS Bluetooth 5.0 IPX7 Waterproof Wireless Earphones - Gunmetal",
         "brand": "Xiaomi",
         "productImage":["https://i.ibb.co/ZJLVthh/9dc362c4959c1de7a6cf86c736739940.jpg", "https://i.ibb.co/9rm0bZ1/d8bf5065bfbaed2f3c01d09ffdc09229.jpg"],
         "productImageWeb":["https://static-01.daraz.com.bd/p/9dc362c4959c1de7a6cf86c736739940.jpg","https://static-01.daraz.com.bd/p/d8bf5065bfbaed2f3c01d09ffdc09229.jpg"],
@@ -18,7 +19,7 @@
             "Sensitivity": "109±3dB",
             "Water Resistance": "IPX5"
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Battery": "250mAh",
             "Talk Time": "About 4hours",
             "Music Time": "About 5hours",
@@ -26,10 +27,13 @@
             "Charging Prot": "Type C"
         },
         "price": 1845,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : ""
     },
     {
-        "name": "Wireless Bluetooth Headphone P47 Earphone Stereo In Ear Headset with FM Radio/MP3/SD Card Slot",
+        "category": "Headphone",
+        "productName": "Wireless Bluetooth Headphone P47 Earphone Stereo In Ear Headset with FM Radio/MP3/SD Card Slot",
         "brand": "No Brand",
         "productImage":["https://i.ibb.co/tMjB6VM/655396b1314c2c6abc2fefff5fe96b35.jpg"],
         "productImageWeb":["https://static-01.daraz.com.bd/p/655396b1314c2c6abc2fefff5fe96b35.jpg"],
@@ -47,7 +51,7 @@
             "Charging Prot": "Type C",
             "Application": "Gaming, Running, Sport"
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Color":"Black",
             "Battery": "250mAh",
             "Talk Time": "About 6hours",
@@ -58,10 +62,13 @@
             "Charging Prot": "Type C"
         },
         "price": 500,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : ""
     },
     {
-        "name": "Super Bass Wireless Bluetooth Earphone - Black",
+        "category": "Headphone",
+        "productName": "Super Bass Wireless Bluetooth Earphone Black",
         "brand": "No Brand",
         "productImage":
             ["https://i.ibb.co/C6qyxbN/4966f51b28d4ebef992ea5aab3f460fa.jpg", "https://i.ibb.co/fdkM0vX/2be2d7175bc0da2f8204add1ea2a10a3.jpg", "https://i.ibb.co/m4w4DXh/3e196e1773be317cc2dddb252c6515f9.jpg"],
@@ -80,7 +87,7 @@
             "Sensitivity": "109±3dB",
             "Water Resistance": "IPX5"
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Battery": "250mAh",
             "Talk Time": "About 5hours",
             "Music Time": "About 7hours",
@@ -89,10 +96,13 @@
             "feature": "Call, Music"
         },
         "price": 250,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : ""
     },
     {
-        "name": "Lenovo HE05 Bluetooth Headphones Wireless Headsets Sport",
+        "category": "Headphone",
+        "productName": "Lenovo HE05 Bluetooth Headphones Wireless Headsets Sport",
         "brand": "Lenevo",
         "productImage":
             ["https://i.ibb.co/XFhSjqD/ea6abcc4a46d2c2c48dfcabdf78707b3.jpg", "https://i.ibb.co/48zjZ93/278dc68e2f607b7a0b83714bc7e19dc1.jpg"],
@@ -118,7 +128,7 @@
             "Dustproof": "IP6X"
 
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Battery": "250mAh",
             "Talk Time": "About 5hours",
             "Music Time": "About 7hours",
@@ -127,10 +137,13 @@
             "feature": "Call, Music"
         },
         "price": 500,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : ""
     },
     {
-        "name": "AirPodss Pro 3rd Gen Wireless Bluetooth Headphone Painless Wearing Earbuds with Type C to Lightning Cable",
+        "category": "Headphone",
+        "productName": "AirPodss Pro 3rd Gen Wireless Bluetooth Headphone Painless Wearing Earbuds with Type C to Lightning Cable",
         "brand": "No Brand",
         "productImage":
             ["https://i.ibb.co/cYGKRGy/cdb82ba66d2cc7e29e694046963c5adb.jpg", "https://i.ibb.co/ZYnCGGB/424eb5df6400bba7d3b5965ed1116d7a.jpg", "https://i.ibb.co/25tphb5/9b8f94db4163fadddf13a337337ae51a.jpg", "https://i.ibb.co/G00jc7G/48f15aa6dc01949283030ea65665b5b9.jpg", "https://i.ibb.co/ZYnCGGB/424eb5df6400bba7d3b5965ed1116d7a.jpg"],
@@ -151,7 +164,7 @@
             "Water Resistance": "IPX5"
 
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Battery": "250mAh",
             "Talk Time": "About 4hours",
             "Music Time": "About 5hours",
@@ -159,10 +172,13 @@
             "Charging Prot": "Type C"
         },
         "price": 3250,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : ""
     },
     {
-        "name": "AirPodss Pro 3rd Gen Wireless Bluetooth Painless Wearing Earbuds 3",
+        "category": "Headphone",
+        "productName": "AirPodss Pro 3rd Gen Wireless Bluetooth Painless Wearing Earbuds 3",
         "brand": "No Brand",
         "productImage":
             ["https://i.ibb.co/svGmnWM/bb24b075b6b5adeda559e88ce13261f5.jpg", "https://i.ibb.co/frn9k5v/e62c220797b3fc39d4dc30801f2d2d81.jpg", "https://i.ibb.co/ZKHYJbX/b97568944b978a248d833f16e61198f2.jpg"],
@@ -183,7 +199,7 @@
             "Water Resistance": "IPX5"
 
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Battery": "250mAh",
             "Talk Time": "About 4hours",
             "Music Time": "About 5hours",
@@ -191,10 +207,13 @@
             "Charging Prot": "Type C"
         },
         "price": 1450,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : ""
     },
     {
-        "name": "Super Bass Headphones Ear Hook - Ear Phone - Headphone - Ear Phone - Earphone",
+        "category": "Headphone",
+        "productName": "Super Bass Headphones Ear Hook - Ear Phone - Headphone - Ear Phone - Earphone",
         "brand": "GADGETS BD",
         "productImage":
             ["https://i.ibb.co/S6dzs0x/681806cfb360d18012b8792d19178045-jpg-720x720-jpg.webp"],
@@ -223,7 +242,7 @@
             
 
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Style": "Ear Hook",
             "Communication": "Wired",
             "Vocalism Principle": "Dynamic",
@@ -233,10 +252,13 @@
             "Frequency Response Range": "20-20000Hz"
         },
         "price": 450,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : ""
     },
     {
-        "name": "inpods 12 tws Wireless Pop-ups Bluetooth 5.0 headphone earphones headsets super bass sound earbuds for iOS Android (Black)",
+        "category": "Headphone",
+        "productName": "inpods 12 tws Wireless Pop-ups Bluetooth 5.0 headphone earphones headsets super bass sound earbuds for iOS Android (Black)",
         "brand": "HQNB",
         "productImage":
             ["https://i.ibb.co/26XSRg6/0c0e26cb6645fae9b70ba6313566df7f-jpg-720x720-jpg.webp", "https://i.ibb.co/pZYxQyr/0f5c179e7792f411ebd7960a8442dc2b-jpg-720x720-jpg.webp", "https://i.ibb.co/kgDmQn7/d71a2b5e61f115ad26ac44f665d69475-jpg-720x720-jpg.webp", "https://i.ibb.co/DDJnytk/dea7cb2708b295e6b913d2c1714acdea-jpg-720x720-jpg.webp"],
@@ -267,7 +289,7 @@
             "Water Resistance": "IPX5"
 
         },
-        "Key Features": {
+        "KeyFeatures": {
             "Control Button": "Yes",
             "Communication": "True Wireless",
             "Volume Contro": "Yes",
@@ -280,6 +302,8 @@
             "Battery": "250mAh"
         },
         "price": 850,
+        "quantity": 100,
+        "status": "in-stock",
         "description" : ""
     }
 ]
