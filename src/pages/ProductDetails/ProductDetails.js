@@ -1,33 +1,28 @@
 import { StarIcon } from "@heroicons/react/24/solid";
 import React, { useEffect, useState } from "react";
-import productPhoto from "../../assets/discount-photo/disouunt-1.png";
 import backgroundImage from "../../assets/banner/bg-t.png";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductDetails } from "../../features/productDetails/productDetails";
-import { useParams } from "react-router-dom";
-
+import { useNavigate, useParams, useLocation } from "react-router-dom";
+import ProductDetailsLoader from "../Loader/ProductDetailsLoader";
 const ProductDetails = () => {
+  const navigate = useNavigate();
   const [num, setNum] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [rating, setRating] = useState(0);
   const dispatch = useDispatch();
   const { id } = useParams();
-  console.log(id);
-
-  const { productDetails, isLoading } = useSelector(
+  const { productDetails, isLoading: productDetailsLoading } = useSelector(
     (state) => state.productDetails
+  );
+  const { smartWatchs, isLoading: smartwatchLoading } = useSelector(
+    (state) => state.smartWatchs
   );
 
   useEffect(() => {
     dispatch(getProductDetails(id));
   }, [dispatch, id]);
-
-  if (isLoading) {
-    return <p>Loading.................</p>;
-  }
-
-  const maps = [1, 2, 3, 5, 6, 7, 8];
 
   const handleQuantity = (operator) => {
     if (operator === "increase") {
@@ -50,6 +45,12 @@ const ProductDetails = () => {
   const handlePhoto = (num) => {
     setNum(num);
   };
+
+  const navigateToProductDetails = (id) => {};
+
+  if (productDetailsLoading) {
+    return <ProductDetailsLoader></ProductDetailsLoader>;
+  }
   if (productDetails.status) {
     return (
       <div style={{ backgroundImage: `url(${backgroundImage})` }}>
@@ -347,25 +348,36 @@ const ProductDetails = () => {
             <div className="md:w-1/3">
               <h3 className="text-2xl font-bold my-1">Related Products</h3>
               <div className="py-2 rounded">
-                {maps.map((maps) => (
-                  <div className="flex items-center gap-3 p-2 m-4 bg-base-100 rounded hover:shadow-lg">
-                    <div>
-                      <img className="w-28" src={productPhoto} alt="" />
+                {smartWatchs.status ? (
+                  smartWatchs?.data.map((product) => (
+                    <div
+                      onClick={() => navigateToProductDetails(product?._id)}
+                      className="flex items-center gap-3 p-2 m-4 bg-base-100 rounded hover:shadow-lg"
+                    >
+                      <div>
+                        <img
+                          className="w-28"
+                          src={product?.productImage[0]}
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <h4>{product?.productName.slice(0, 20)}.....</h4>
+                        <p className="text-orange-500">{product?.price}</p>
+                        <button className="btn btn-success px-6 btn-sm mt-3 text-white font-semibold uppercase">
+                          <span>
+                            <ShoppingCartIcon className="w-5 mr-2"></ShoppingCartIcon>
+                          </span>
+                          <span className="block md:hidden lg:block">
+                            Add To Cart
+                          </span>
+                        </button>
+                      </div>
                     </div>
-                    <div>
-                      <h4>Asus Zendpas 7</h4>
-                      <p className="text-orange-500">$120</p>
-                      <button className="btn btn-success px-6 btn-sm mt-3 text-white font-semibold uppercase">
-                        <span>
-                          <ShoppingCartIcon className="w-5 mr-2"></ShoppingCartIcon>
-                        </span>
-                        <span className="block md:hidden lg:block">
-                          Add To Cart
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                ))}
+                  ))
+                ) : (
+                  <p>Loading</p>
+                )}
               </div>
             </div>
           </div>
