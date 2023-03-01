@@ -10,7 +10,7 @@ const initialState = {
 export const getProductDetails = createAsyncThunk(
   "productDetails/getProductDetails",
   async (id) => {
-    const url = `http://localhost:5000/api/v1/product/${id}`;
+    const url = `https://e-mart-server.vercel.app/api/v1/product/${id}`;
     console.log(url);
 
     const res = await fetch(url);

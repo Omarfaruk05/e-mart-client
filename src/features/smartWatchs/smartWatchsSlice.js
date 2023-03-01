@@ -10,7 +10,7 @@ const initialState = {
 export const getSmartWatchs = createAsyncThunk(
   "smartWatchs/getsmartWatchs",
   async (param) => {
-    const url = `http://localhost:5000/api/v1/products/${param}`;
+    const url = `https://e-mart-server.vercel.app/api/v1/products/${param}`;
     console.log(url);
     const res = await fetch(url);
     const data = await res.json();

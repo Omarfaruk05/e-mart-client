@@ -8,10 +8,13 @@ import ShopingCart from "../ShopingCart/ShopingCart";
 import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 import LoginRegistration from "../LoginRegistration/LoginRegistration";
+import { useSelector } from "react-redux";
 
 const NavComponent = ({ children }) => {
   const [showSearch, setShowSearch] = useState(false);
   const [showCart, setShowCart] = useState(false);
+
+  const { cart } = useSelector((state) => state.cart);
 
   const handleSearch = () => {
     setShowSearch(!showSearch);
@@ -81,11 +84,17 @@ const NavComponent = ({ children }) => {
                     </a>
                   </li>
                   <LoginRegistration></LoginRegistration>
-                  <li onClick={() => setShowCart(!showCart)}>
-                    <a>
+                  <div
+                    className="relative mt-3"
+                    onClick={() => setShowCart(!showCart)}
+                  >
+                    <p>
                       <ShoppingCartIcon className=" h-6 w-6"></ShoppingCartIcon>
-                    </a>
-                  </li>
+                    </p>
+                    <p className="absolute -right-2 -top-2 mx-auto h-5 w-5  px-[3px] rounded-full  bg-red-500">
+                      {cart.length}
+                    </p>
+                  </div>
                 </ul>
               </div>
             </div>

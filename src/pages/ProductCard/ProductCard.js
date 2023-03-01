@@ -1,13 +1,17 @@
 import { StarIcon } from "@heroicons/react/24/solid";
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addToCart } from "../../features/cart/cartSlice";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const navigateToProductDetails = (id) => {
     navigate(`product/${id}`);
   };
+
   return (
     <div>
       <div className="bg-base-100 rounded-sm shadow-sm hover:shadow-lg mb-8">
@@ -42,7 +46,10 @@ const ProductCard = ({ product }) => {
           <button className="btn btn-sm rounded-sm w-full text-sm btn-primary px-2 py-1 mb-2 uppercase font-semibold font">
             Buy Now
           </button>
-          <button className="btn btn-sm rounded-sm w-full btn-primary text-sm py-1 px-2 uppercase font-semibold font">
+          <button
+            onClick={() => dispatch(addToCart(product))}
+            className="btn btn-sm rounded-sm w-full btn-primary text-sm py-1 px-2 uppercase font-semibold font"
+          >
             Add to Cart
           </button>
         </div>

@@ -5,13 +5,17 @@ import {
 } from "@heroicons/react/24/outline";
 import { TrashIcon } from "@heroicons/react/24/solid";
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../../assets/banner/bg-t.png";
 import productPhoto from "../../../assets/discount-photo/disouunt-1.png";
+import { removeFromCart } from "../../../features/cart/cartSlice";
 
 const CartItems = () => {
   const [quantity, setQuantity] = useState(1);
-  const cartItems = [1, 2, 3, 5, 6, 7, 8];
+  const dispatch = useDispatch();
+
+  const { cart } = useSelector((state) => state.cart);
 
   const handleQuantity = (operator) => {
     if (operator === "increase") {
@@ -67,26 +71,33 @@ const CartItems = () => {
               <h3 className="text-lg font-bold uppercase">Total Price</h3>
             </div>
           </div>
-          {cartItems.map((cartItem) => (
+          {cart.map((cartItem) => (
             <>
               <div className="grid justify-between items-center grid-cols-1 md:grid-cols-4 gap-2 bg-base-100 mx-2 text-center md:text-start relative">
                 <div className="absolute right-2">
                   <button className="btn btn-link btn-xs">
-                    <TrashIcon className="w-5 text-red-500"></TrashIcon>
+                    <TrashIcon
+                      onClick={() => dispatch(removeFromCart(cartItem._id))}
+                      className="w-5 text-red-500"
+                    ></TrashIcon>
                   </button>
                 </div>
                 {/* product  */}
                 <div className="md:col-span-2 flex items-center justify-center md:justify-start">
                   <div>
-                    <img className="w-20 h-20" src={productPhoto} alt="" />
+                    <img
+                      className="w-20 h-20"
+                      src={cartItem?.productImage}
+                      alt=""
+                    />
                   </div>
                   <div>
                     <h2 className="text-md font-bold uppercase">
-                      Asus Zendpus 7
+                      {cartItem?.productName.slice(0, 20)}.....
                     </h2>
                     <p className="text-sm">
-                      <span className="font-bold">Model:</span>{" "}
-                      <span className="text-orange-500">Zendpus 7</span>
+                      <span className="font-bold">Brand:</span>{" "}
+                      <span className="text-orange-500">{cartItem?.brand}</span>
                     </p>
                   </div>
                 </div>
@@ -102,7 +113,7 @@ const CartItems = () => {
                     <input
                       type="text"
                       name=""
-                      value={quantity}
+                      value={cartItem.quantity}
                       className="input input-sm bg-slate-200 border-gray-400  w-8 p-0 mx-1 text-center"
                       id=""
                     />
@@ -121,14 +132,14 @@ const CartItems = () => {
                     <span className="inline md:hidden mr-2">
                       Unite Price:
                     </span>{" "}
-                    $120
+                    {cartItem.price}
                   </h2>
                   <h2 className="text-md font-bold">
                     {" "}
                     <span className="inline md:hidden mr-2">
                       Total Price:
                     </span>{" "}
-                    $120
+                    {cartItem.price * cartItem.quantity}
                   </h2>
                 </div>
               </div>
