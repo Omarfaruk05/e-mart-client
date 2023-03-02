@@ -186,7 +186,7 @@ const Payment = () => {
                           <input
                             type="text"
                             name=""
-                            value={cartItem.value}
+                            value={cartItem.quantity}
                             disabled
                             className="input input-sm input-bordered w-8 p-1 mx-1 text-center"
                             id=""
