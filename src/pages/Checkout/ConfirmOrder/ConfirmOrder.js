@@ -2,13 +2,15 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../../assets/banner/bg-t.png";
 
 const ConfirmOrder = () => {
   const [user, setUser] = useState(false);
   const [account, setAccount] = useState(false);
-  const cartItems = [1, 2, 3, 5];
+
+  const { cart } = useSelector((state) => state.cart);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -182,16 +184,20 @@ const ConfirmOrder = () => {
                 <h3 className="text-lg font-bold uppercase">Total Price</h3>
               </div>
               <div className="border mx-2 ">
-                {cartItems.map((cartItem) => (
+                {cart.map((cartItem) => (
                   <>
                     <div className="grid justify-between items-center grid-cols-1 md:grid-cols-4 gap-2 bg-base-100text-center md:text-start relative px-2 hover:bg-slate-50 py-2">
                       {/* product  */}
                       <div className="md:col-span-2 flex items-center justify-center md:justify-start">
                         <div>
-                          <h2 className="text-md font-bold">Asus Zendpus 7</h2>
+                          <h2 className="text-md font-bold">
+                            {cartItem?.productName.slice(0, 20)}....
+                          </h2>
                           <p className="text-sm">
                             <span>Model:</span>{" "}
-                            <span className="text-orange-500">Zendpus 7</span>
+                            <span className="text-orange-500">
+                              {cartItem?.model}
+                            </span>
                           </p>
                         </div>
                       </div>
@@ -201,7 +207,7 @@ const ConfirmOrder = () => {
                           <input
                             type="text"
                             name=""
-                            value={"1"}
+                            value={cartItem?.quantity}
                             disabled
                             className="input input-sm input-bordered w-8 p-1 mx-1 text-center"
                             id=""
@@ -214,7 +220,7 @@ const ConfirmOrder = () => {
                         <span className="inline md:hidden mr-2">
                           Total Price:
                         </span>{" "}
-                        $120
+                        {cartItem?.price}
                       </h2>
                     </div>
                     <hr className="" />

@@ -4,32 +4,20 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import { TrashIcon } from "@heroicons/react/24/solid";
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../../assets/banner/bg-t.png";
-import productPhoto from "../../../assets/discount-photo/disouunt-1.png";
-import { removeFromCart } from "../../../features/cart/cartSlice";
+import {
+  addToCart,
+  decreaseQuantity,
+  removeFromCart,
+} from "../../../features/cart/cartSlice";
 
 const CartItems = () => {
-  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
 
   const { cart } = useSelector((state) => state.cart);
-
-  const handleQuantity = (operator) => {
-    if (operator === "increase") {
-      setQuantity(quantity + 1);
-      return;
-    }
-    if (operator === "decrease" && quantity === 1) {
-      return;
-    }
-    if (operator === "decrease" && quantity > 1) {
-      setQuantity(quantity - 1);
-      return;
-    }
-  };
 
   return (
     <div style={{ backgroundImage: `url(${backgroundImage})` }}>
@@ -105,7 +93,7 @@ const CartItems = () => {
                 <div className="mx-auto md:mx-0">
                   <div className="flex gap-1 items-center w-full text-center">
                     <button
-                      onClick={() => handleQuantity("decrease")}
+                      onClick={() => dispatch(decreaseQuantity(cartItem))}
                       className="btn btn-sm px-3 border-2 border-gray-400"
                     >
                       -
@@ -118,7 +106,7 @@ const CartItems = () => {
                       id=""
                     />
                     <button
-                      onClick={() => handleQuantity("increase")}
+                      onClick={() => dispatch(addToCart(cartItem))}
                       className="btn btn-sm px-3 border-gray-400"
                     >
                       +
