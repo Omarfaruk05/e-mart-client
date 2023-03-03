@@ -1,22 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import sidePic1 from "../../assets/discount-photo/about-1.jpg";
 import sidePic2 from "../../assets/discount-photo/about-2.jpg";
 import Brands from "../Brands/Brands";
 import ElectroAndaudioNav from "../ElectroAndAudioNav/ElectroAndaudioNav";
 import ProductCard from "../ProductCard/ProductCard";
-import { useDispatch, useSelector } from "react-redux";
-import { getSmartWatchs } from "../../features/smartWatchs/smartWatchsSlice";
 import ProductCartLoader from "../Loader/ProductCartLoader";
+import { useSelector } from "react-redux";
 
 const ElectroAndAudio = () => {
-  const dispatch = useDispatch();
-  const { smartWatchs, isLoading } = useSelector((state) => state.smartWatchs);
+  const { smartWatchs } = useSelector((state) => state.smartWatchs);
   const navItemNames = "SmartWatch";
   const num = [1, 2, 3, 4, 5, 6, 7, 8];
-
-  useEffect(() => {
-    dispatch(getSmartWatchs("SmartWatch"));
-  }, [dispatch]);
 
   return (
     <div>

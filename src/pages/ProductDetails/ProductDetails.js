@@ -4,8 +4,9 @@ import backgroundImage from "../../assets/banner/bg-t.png";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductDetails } from "../../features/productDetails/productDetails";
-import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { useNavigate, useParams, useLocation, Link } from "react-router-dom";
 import ProductDetailsLoader from "../Loader/ProductDetailsLoader";
+import { addToCart } from "../../features/cart/cartSlice";
 const ProductDetails = () => {
   const navigate = useNavigate();
   const [num, setNum] = useState(0);
@@ -16,6 +17,7 @@ const ProductDetails = () => {
   const { productDetails, isLoading: productDetailsLoading } = useSelector(
     (state) => state.productDetails
   );
+  console.log(productDetails);
   const { smartWatchs, isLoading: smartwatchLoading } = useSelector(
     (state) => state.smartWatchs
   );
@@ -60,7 +62,7 @@ const ProductDetails = () => {
               <div>
                 <img
                   className="text-center w-full cursor-pointer"
-                  src={productDetails?.data?.productImage[num]}
+                  src={productDetails?.productImage[num]}
                   alt=""
                 />
               </div>
@@ -68,52 +70,52 @@ const ProductDetails = () => {
                 <img
                   onClick={() => handlePhoto(0)}
                   className="w-24 cursor-pointer hover:shadow-md"
-                  src={productDetails?.data?.productImage[0]}
+                  src={productDetails?.productImage[0]}
                   alt=""
                 />
                 <img
                   onClick={() => handlePhoto(1)}
                   className="w-24 cursor-pointer hover:shadow-md"
-                  src={productDetails?.data?.productImage[1]}
+                  src={productDetails?.productImage[1]}
                   alt=""
                 />
                 <img
                   onClick={() => handlePhoto(2)}
                   className="w-24 cursor-pointer hover:shadow-md"
-                  src={productDetails?.data?.productImage[2]}
+                  src={productDetails?.productImage[2]}
                   alt=""
                 />
                 <img
                   onClick={() => handlePhoto(3)}
                   className="w-24 cursor-pointer hover:shadow-md"
-                  src={productDetails?.data?.productImage[3]}
+                  src={productDetails?.productImage[3]}
                   alt=""
                 />
                 <img
                   onClick={() => handlePhoto(4)}
                   className="w-24 cursor-pointer hover:shadow-md"
-                  src={productDetails?.data?.productImage[4]}
+                  src={productDetails?.productImage[4]}
                   alt=""
                 />
               </div>
             </div>
             <div className="col-span-3 px-4">
               <h2 className="text-3xl font-bold mb-2 text-indigo-900">
-                {productDetails?.data?.productName}
+                {productDetails?.productName}
               </h2>
               <div className="flex flex-wrap gap-2">
                 <span className="rounded-full bg-slate-100 p-1 shadow-sm px-5">
-                  Offer Price: {productDetails?.data?.price}
+                  Offer Price: {productDetails?.price}
                 </span>
                 <span className="rounded-full bg-slate-100 p-1 shadow-sm px-5">
                   Price: <span className="font-normal">৳ </span>
-                  {productDetails?.data?.price}
+                  {productDetails?.price}
                 </span>
                 <span className="rounded-full bg-slate-100 p-1 shadow-sm px-5">
-                  Stock: {productDetails?.data?.status}
+                  Stock: {productDetails?.status}
                 </span>
                 <span className="rounded-full bg-slate-100 p-1 shadow-sm px-5">
-                  Brand: {productDetails?.data?.brand}
+                  Brand: {productDetails?.brand}
                 </span>
                 <span className="rounded-full bg-slate-100 p-1 shadow-sm px-5">
                   Warranty: 1 Year
@@ -123,7 +125,7 @@ const ProductDetails = () => {
                 <h2 className="text-2xl font-bold mt-4">Kye Features:</h2>
                 <hr className="w-40" />
                 <ul>
-                  {Object.entries(productDetails?.data?.KeyFeatures).map(
+                  {Object.entries(productDetails?.KeyFeatures).map(
                     ([key, val], i) => (
                       <li key={i}>
                         <span className="font-bold text-lg text-indigo-900">
@@ -163,7 +165,7 @@ const ProductDetails = () => {
                   </h3>
                   <h2 className="text-2xl font-bold text-orange-500">
                     <span className="font-normal">৳ </span>
-                    {productDetails?.data?.price}
+                    {productDetails?.price}
                   </h2>
                   <div>
                     <small className="text-sm">
@@ -218,13 +220,29 @@ const ProductDetails = () => {
                         +
                       </button>
                     </div>
-                    <p className="btn btn-success text-white font-semibold font mb-2">
+                    <button
+                      onClick={() =>
+                        dispatch(
+                          addToCart({ product: productDetails, quantity })
+                        )
+                      }
+                      className="btn btn-success text-white font-semibold font mb-2"
+                    >
                       Add to Cart
-                    </p>
+                    </button>
                   </div>
-                  <p className="btn btn-success text-white font-semibold font px-7 mb-2">
-                    Buy Now
-                  </p>
+                  <Link to={"/delivery"}>
+                    <button
+                      onClick={() =>
+                        dispatch(
+                          addToCart({ product: productDetails, quantity })
+                        )
+                      }
+                      className="btn btn-success text-white font-semibold font px-7 mb-2"
+                    >
+                      Buy Now
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -244,7 +262,7 @@ const ProductDetails = () => {
                   </h4>
                   <hr />
                   <div className=" rounded-b-md">
-                    {Object.entries(productDetails?.data?.productDetails).map(
+                    {Object.entries(productDetails?.productDetails).map(
                       ([key, val], i) => (
                         <>
                           <div
@@ -266,12 +284,12 @@ const ProductDetails = () => {
                 <div>
                   <img
                     className="w-full mx-auto"
-                    src={productDetails?.data?.productImage[0]}
+                    src={productDetails?.productImage[0]}
                     alt=""
                   />
                 </div>
-                {productDetails.data.description && (
-                  <p>{productDetails?.data?.description}</p>
+                {productDetails.description && (
+                  <p>{productDetails?.description}</p>
                 )}
               </div>
               {/* Review Section  */}

@@ -210,7 +210,6 @@ const ConfirmOrder = () => {
                             value={cartItem?.quantity}
                             disabled
                             className="input input-sm input-bordered w-8 p-1 mx-1 text-center"
-                            id=""
                           />
                         </div>
                       </div>
@@ -219,32 +218,56 @@ const ConfirmOrder = () => {
                         {" "}
                         <span className="inline md:hidden mr-2">
                           Total Price:
-                        </span>{" "}
-                        {cartItem?.price}
+                        </span>
+                        <span> ৳ </span>
+                        {cartItem?.price * cartItem?.quantity}
                       </h2>
                     </div>
                     <hr className="" />
                   </>
                 ))}
-
-                <div className="flex justify-between items-center mx-2 p-4 bg-base-100">
-                  <p className="text-lg font-bold">Discount 15%</p>
-                  <p>$ 12</p>
+                <hr />
+                <div className="grid grid-cols-4 gap-2 p-2 bg-base-100">
+                  <p className="text-lg font-bold col-span-3">Shipping</p>
+                  <p>
+                    <span> ৳ </span>
+                    <span>130</span>
+                  </p>
                 </div>
                 <hr />
-                <div className="flex justify-between items-center mx-2 p-4 bg-base-100">
-                  <p className="text-lg font-bold">Shipping</p>
-                  <p>$ 30</p>
+                <div className="grid grid-cols-4 gap-2 p-2 bg-base-100">
+                  <p className="text-lg font-bold col-span-3">Vat</p>
+                  <p>
+                    <span> ৳ </span>
+                    <span>
+                      {cart.reduce(
+                        (total, item) =>
+                          Math.round(
+                            (total + item.price * item.quantity) * 0.01
+                          ),
+                        0
+                      )}
+                    </span>
+                  </p>
                 </div>
                 <hr />
-                <div className="flex justify-between items-center mx-2 p-4 bg-base-100">
-                  <p className="text-lg font-bold">Vat</p>
-                  <p>$ 12</p>
-                </div>
-                <hr />
-                <div className="flex text-xl font-bold text-orange-600 justify-between items-center mx-2 p-4 bg-base-100">
-                  <h3 className="">Total</h3>
-                  <h3>$ 140</h3>
+                <div className="grid grid-cols-4 gap-2 p-2 bg-slate-200 text-xl font-bold text-orange-500">
+                  <h3 className="col-span-3">Total</h3>
+                  <h3>
+                    <span> ৳ </span>
+                    <span>
+                      {cart.reduce(
+                        (total, item) =>
+                          total +
+                          item.price * item.quantity +
+                          Math.round(
+                            (total + item.price * item.quantity) * 0.01
+                          ) +
+                          130,
+                        0
+                      )}
+                    </span>
+                  </h3>
                 </div>
               </div>
             </div>

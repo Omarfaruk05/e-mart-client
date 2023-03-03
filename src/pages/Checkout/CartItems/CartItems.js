@@ -4,7 +4,7 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import { TrashIcon } from "@heroicons/react/24/solid";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../../assets/banner/bg-t.png";
@@ -106,7 +106,9 @@ const CartItems = () => {
                       id=""
                     />
                     <button
-                      onClick={() => dispatch(addToCart(cartItem))}
+                      onClick={() =>
+                        dispatch(addToCart({ product: cartItem, quantity: 1 }))
+                      }
                       className="btn btn-sm px-3 border-gray-400"
                     >
                       +
@@ -117,36 +119,46 @@ const CartItems = () => {
                 <div className="mt-4 md:mt-0 md:grid grid-cols-2 items-center gap-2 ">
                   <h2 className="text-md font-bold">
                     {" "}
-                    <span className="inline md:hidden mr-2">
-                      Unite Price:
-                    </span>{" "}
-                    {cartItem.price}
+                    <span className="inline md:hidden mr-2 uppercase text-semibold">
+                      Unite Price: ৳
+                    </span>
+                    <span className="hidden md:inline-block"> ৳ </span>
+                    <span>{cartItem.price}</span>
                   </h2>
                   <h2 className="text-md font-bold">
                     {" "}
-                    <span className="inline md:hidden mr-2">
-                      Total Price:
-                    </span>{" "}
-                    {cartItem.price * cartItem.quantity}
+                    <span className="inline md:hidden mr-2 uppercase text-semibold">
+                      Total Price: ৳{" "}
+                    </span>
+                    <span className="hidden md:inline-block"> ৳ </span>{" "}
+                    <span>{cartItem.price * cartItem.quantity}</span>
                   </h2>
                 </div>
               </div>
               <hr className="mx-2" />
             </>
           ))}
-          <div className="flex justify-between items-center mx-2 p-4 bg-base-100">
-            <p className="text-lg font-bold">Discount 15%</p>
-            <p>$ 12</p>
+          <hr className="mx-2" />
+          <div className="grid grid-cols-8 gap-2 p-2 bg-base-100">
+            <p className="text-lg font-bold col-span-7">Shipping</p>
+            <p>
+              <span> ৳ </span>
+              <span>130</span>
+            </p>
           </div>
           <hr className="mx-2" />
-          <div className="flex justify-between items-center mx-2 p-4 bg-base-100">
-            <p className="text-lg font-bold">Shipping</p>
-            <p>$ 30</p>
-          </div>
-          <hr className="mx-2" />
-          <div className="flex justify-between items-center mx-2 p-4 bg-base-100">
-            <p className="text-lg font-bold">Vat</p>
-            <p>$ 12</p>
+          <div className="grid grid-cols-8 gap-2 p-2 bg-base-100">
+            <p className="text-lg font-bold col-span-7">Vat</p>
+            <p>
+              <span> ৳ </span>
+              <span>
+                {cart.reduce(
+                  (total, item) =>
+                    Math.round((total + item.price * item.quantity) * 0.01),
+                  0
+                )}
+              </span>
+            </p>
           </div>
           <hr className="mx-2" />
           <div className="flex justify-between items-center mx-0 sm:mx-2 px-4 py-8 bg-base-100 rounded-b-lg">
@@ -165,8 +177,17 @@ const CartItems = () => {
               </form>
             </div>
             <h2 className="text-lg md:text-2xl font-bold uppercase text-orange-600">
-              <span className="mr-2">Total :</span>
-              <span>$ 150</span>
+              <span className="mr-2">Total : ৳</span>
+              <span>
+                {cart.reduce(
+                  (total, item) =>
+                    total +
+                    item.price * item.quantity +
+                    Math.round((total + item.price * item.quantity) * 0.01) +
+                    130,
+                  0
+                )}
+              </span>
             </h2>
           </div>
           <div className="flex justify-between">

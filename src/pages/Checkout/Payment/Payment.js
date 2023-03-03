@@ -195,32 +195,55 @@ const Payment = () => {
                       </div>
                       {/* price  */}
                       <h2 className="mx-0 text-start text-md font-bold">
-                        {" "}
-                        {cartItem.price}
+                        <span> ৳ </span>
+                        <span>{cartItem?.price * cartItem?.quantity}</span>
                       </h2>
                     </div>
                     <hr className="" />
                   </>
                 ))}
-
-                <div className="grid grid-cols-4 justify-between items-center px-2 py-4 bg-slate-100">
-                  <p className="text-lg font-bold col-span-3">Discount 15%</p>
-                  <p className="ml-2">$ 12</p>
-                </div>
                 <hr />
-                <div className="grid grid-cols-4 justify-between items-center px-2 py-4 bg-base-200">
+                <div className="grid grid-cols-4 gap-2 p-2 bg-base-100">
                   <p className="text-lg font-bold col-span-3">Shipping</p>
-                  <p className="ml-2">$ 30</p>
+                  <p>
+                    <span> ৳ </span>
+                    <span>130</span>
+                  </p>
                 </div>
                 <hr />
-                <div className="grid grid-cols-4 justify-between items-center px-2 py-4 bg-slate-100">
+                <div className="grid grid-cols-4 gap-2 p-2 bg-base-100">
                   <p className="text-lg font-bold col-span-3">Vat</p>
-                  <p className="ml-2">$ 12</p>
+                  <p>
+                    <span> ৳ </span>
+                    <span>
+                      {cart.reduce(
+                        (total, item) =>
+                          Math.round(
+                            (total + item.price * item.quantity) * 0.01
+                          ),
+                        0
+                      )}
+                    </span>
+                  </p>
                 </div>
                 <hr />
-                <div className="grid grid-cols-4 text-xl font-bold text-orange-600 justify-between items-center px-2 py-4 bg-cyan-200">
+                <div className="grid grid-cols-4 gap-2 p-2 bg-slate-200 text-xl font-bold text-orange-500">
                   <h3 className="col-span-3">Total</h3>
-                  <h3 className="ml-2">$ 140</h3>
+                  <h3>
+                    <span> ৳ </span>
+                    <span>
+                      {cart.reduce(
+                        (total, item) =>
+                          total +
+                          item.price * item.quantity +
+                          Math.round(
+                            (total + item.price * item.quantity) * 0.01
+                          ) +
+                          130,
+                        0
+                      )}
+                    </span>
+                  </h3>
                 </div>
               </div>
             </div>

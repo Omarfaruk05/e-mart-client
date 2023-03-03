@@ -1,22 +1,16 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import sidePic1 from "../../assets/discount-photo/about-1.jpg";
 import sidePic2 from "../../assets/discount-photo/about-2.jpg";
-import { getHeadphones } from "../../features/headphones/headphonesSlice";
 import Brands from "../Brands/Brands";
 import ElectroAndaudioNav from "../ElectroAndAudioNav/ElectroAndaudioNav";
 import ProductCartLoader from "../Loader/ProductCartLoader";
 import ProductCard from "../ProductCard/ProductCard";
 
 const TabletAndMobile = () => {
-  const dispatch = useDispatch();
-  const { headphones, isLoading } = useSelector((state) => state.headphones);
+  const { headphones } = useSelector((state) => state.headphones);
   const navItemNames = "HeadPhone";
   const num = [1, 2, 3, 4, 5, 6, 7, 8];
-
-  useEffect(() => {
-    dispatch(getHeadphones("Headphone"));
-  }, [dispatch]);
 
   return (
     <div>
