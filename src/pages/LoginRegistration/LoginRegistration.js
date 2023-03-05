@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import loginPhoto from "../../assets/login-ragistration/login.jpg";
 import singUpPhoto from "../../assets/login-ragistration/sing-up.jpg";
-import { getUser } from "../../features/user/userSlice";
+import { createUser, getUser } from "../../features/user/userSlice";
 
 const LoginRegistration = () => {
   const [login, setLogin] = useState(true);
@@ -21,6 +21,14 @@ const LoginRegistration = () => {
     setSignUp(true);
   };
 
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const us = { email, password };
+    console.log(us);
+    dispatch(getUser(us));
+  };
   const handleSignupSubmit = (e) => {
     e.preventDefault();
     const firstName = e.target.firstName.value;
@@ -29,11 +37,11 @@ const LoginRegistration = () => {
     const password = e.target.password.value;
     const confirmPassword = e.target.confirmPassword.value;
     const us = { firstName, lastName, email, password, confirmPassword };
-    dispatch(getUser(us));
+    dispatch(createUser(us));
   };
 
   return (
-    <div className={user._id ? "hidden" : "block"}>
+    <div className={user?._id ? "hidden" : "block"}>
       <input
         type="checkbox"
         id="login-registration-modal"
@@ -75,7 +83,7 @@ const LoginRegistration = () => {
             <div className={login ? "flex items-center" : "hidden"}>
               <div className="flex items-center px-4 md:w-1/2 h-[500px] text-gray-700 bg-slate-200">
                 <div>
-                  <form>
+                  <form onSubmit={handleLoginSubmit}>
                     <div>
                       <input
                         className="input input-bordered rounded-sm w-full mb-4"

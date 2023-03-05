@@ -15,6 +15,7 @@ const NavComponent = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
 
   const { cart } = useSelector((state) => state.cart);
+  const { user } = useSelector((state) => state.user);
 
   const handleSearch = () => {
     setShowSearch(!showSearch);
@@ -78,9 +79,17 @@ const NavComponent = ({ children }) => {
                   {/* <!-- Navbar menu content here --> */}
                   <li>
                     <a>
-                      <label htmlFor="login-registration-modal">
-                        <UserIcon className=" h-6 w-6"></UserIcon>
-                      </label>
+                      {user?._id ? (
+                        <label htmlFor="login-registration-modal">
+                          <div className="bg-green-500 rounded-full">
+                            <UserIcon className=" h-6 w-6"></UserIcon>
+                          </div>
+                        </label>
+                      ) : (
+                        <label htmlFor="login-registration-modal">
+                          <UserIcon className=" h-6 w-6"></UserIcon>
+                        </label>
+                      )}
                     </a>
                   </li>
                   <LoginRegistration></LoginRegistration>

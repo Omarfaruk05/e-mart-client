@@ -14,10 +14,12 @@ import Subscribe from "../Subscribe/Subscribe";
 import { getSmartWatchs } from "../../features/smartWatchs/smartWatchsSlice";
 import { useDispatch } from "react-redux";
 import { getHeadphones } from "../../features/headphones/headphonesSlice";
+import { getMe } from "../../features/user/userSlice";
 
 const HomePage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(getMe());
     dispatch(getSmartWatchs("SmartWatch"));
     dispatch(getHeadphones("Headphone"));
   }, [dispatch]);
