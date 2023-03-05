@@ -8,12 +8,15 @@ const initialState = {
 };
 
 export const getMe = createAsyncThunk("user/getMe", async () => {
-  const res = await fetch(`http://localhost:5000/api/v1/user/getMe`, {
-    method: "GET",
-    headers: {
-      authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  });
+  const res = await fetch(
+    `https://e-mart-server.vercel.app/api/v1/user/getMe`,
+    {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }
+  );
   const data = await res.json();
   console.log(data);
   return data.data;
@@ -21,7 +24,7 @@ export const getMe = createAsyncThunk("user/getMe", async () => {
 
 export const createUser = createAsyncThunk("user/createUser", async (user) => {
   console.log(user);
-  const res = await fetch(`http://localhost:5000/api/v1/user/signup`, {
+  const res = await fetch(`https://e-mart-server.vercel.app/v1/user/signup`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -34,13 +37,16 @@ export const createUser = createAsyncThunk("user/createUser", async (user) => {
 });
 export const getUser = createAsyncThunk("user/getUser", async (user) => {
   console.log(user);
-  const res = await fetch(`http://localhost:5000/api/v1/user/login`, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify(user),
-  });
+  const res = await fetch(
+    `https://e-mart-server.vercel.app/api/v1/user/login`,
+    {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    }
+  );
   const data = await res.json();
   console.log(data);
   if (data.data.token) {
