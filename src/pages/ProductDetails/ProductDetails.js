@@ -4,11 +4,10 @@ import backgroundImage from "../../assets/banner/bg-t.png";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductDetails } from "../../features/productDetails/productDetails";
-import { useNavigate, useParams, useLocation, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import ProductDetailsLoader from "../Loader/ProductDetailsLoader";
 import { addToCart } from "../../features/cart/cartSlice";
 const ProductDetails = () => {
-  const navigate = useNavigate();
   const [num, setNum] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [rating, setRating] = useState(0);

@@ -14,9 +14,10 @@ import "./Banner.css";
 
 // import required modules
 import { Autoplay, Pagination } from "swiper";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const navigate = useNavigate();
   return (
     <div className="max-w-7xl mx-auto mt-4">
       <div className="flex gap-5">
@@ -31,10 +32,16 @@ const Banner = () => {
             <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">
               <Link>Mobile & Tablet</Link>
             </li>
-            <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">
-              <Link>Camera & Video</Link>
+            <li
+              onClick={() => navigate("products/SmartWatch")}
+              className=" border-b p-1 cursor-pointer hover:bg-slate-600"
+            >
+              <Link>Watch & Smart Watch</Link>
             </li>
-            <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">
+            <li
+              onClick={() => navigate("products/Headphone")}
+              className=" border-b p-1 cursor-pointer hover:bg-slate-600"
+            >
               <Link>Audio & Headphones</Link>
             </li>
             <li className=" border-b p-1 cursor-pointer hover:bg-slate-600">

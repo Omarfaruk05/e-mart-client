@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import ProductsFilter from "../ProductsFilter/ProductsFilter";
 import backgroundImage from "../../assets/banner/bg-t.png";
 import ProductCard from "../ProductCard/ProductCard";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { getProducts } from "../../features/product/productSlice";
+import ProductCartLoader from "../Loader/ProductCartLoader";
 
 const Products = () => {
   const [minRange, setMinRange] = useState(0);
   const [maxRange, setMaxRange] = useState(1000);
-  const products = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  ];
+  const dispatch = useDispatch();
+  const { productCategory } = useParams();
+  console.log(productCategory);
+
+  const { products, isLoading, isError } = useSelector(
+    (state) => state.products
+  );
+  console.log(products);
+  const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+  useEffect(() => {
+    dispatch(getProducts(productCategory));
+  }, [dispatch, productCategory]);
 
   console.log(minRange, maxRange);
   return (
@@ -90,9 +104,16 @@ const Products = () => {
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mt-4 justify-center items-center">
-                {products.map((prodcut) => (
-                  <ProductCard></ProductCard>
-                ))}
+                {products.status
+                  ? products.data.map((product) => (
+                      <ProductCard
+                        product={product}
+                        key={product._id}
+                      ></ProductCard>
+                    ))
+                  : num.map((x) => (
+                      <ProductCartLoader key={x}></ProductCartLoader>
+                    ))}
               </div>
             </div>
           </div>
