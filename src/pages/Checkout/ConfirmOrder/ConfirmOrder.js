@@ -228,26 +228,23 @@ const ConfirmOrder = () => {
                 ))}
                 <hr />
                 <div className="grid grid-cols-4 gap-2 p-2 bg-base-100">
-                  <p className="text-lg font-bold col-span-3">Shipping</p>
-                  <p>
-                    <span> ৳ </span>
-                    <span>130</span>
-                  </p>
-                </div>
-                <hr />
-                <div className="grid grid-cols-4 gap-2 p-2 bg-base-100">
-                  <p className="text-lg font-bold col-span-3">Vat</p>
+                  <p className="text-lg font-bold col-span-3">Sub-Total</p>
                   <p>
                     <span> ৳ </span>
                     <span>
                       {cart.reduce(
-                        (total, item) =>
-                          Math.round(
-                            (total + item.price * item.quantity) * 0.01
-                          ),
+                        (total, item) => total + item.price * item.quantity,
                         0
                       )}
                     </span>
+                  </p>
+                </div>
+                <hr />
+                <div className="grid grid-cols-4 gap-2 p-2 bg-base-100">
+                  <p className="text-lg font-bold col-span-3">Shipping</p>
+                  <p>
+                    <span> ৳ </span>
+                    <span>130</span>
                   </p>
                 </div>
                 <hr />

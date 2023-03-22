@@ -71,12 +71,26 @@ const ShopingCart = ({ showCart, setShowCart }) => {
           </div>
           <div className="flex justify-between w-60 md:w-96 px-4 my-2">
             <p>Sub-Total</p>
-            <p className="font-bold">$120000</p>
+            <p className="font-bold">
+              {cart.reduce(
+                (total, item) => total + item.price * item.quantity,
+                0
+              )}
+            </p>
           </div>
           <hr />
           <div className="flex justify-between w-60 md:w-96 px-4 my-2">
             <p>Total</p>
-            <p className="font-bold">$120000</p>
+            <p className="font-bold">
+              {cart.reduce(
+                (total, item) =>
+                  total +
+                  item.price * item.quantity +
+                  Math.round((total + item.price * item.quantity) * 0.01) +
+                  130,
+                0
+              )}
+            </p>
           </div>
           <Link to={"cart-items"}>
             <button

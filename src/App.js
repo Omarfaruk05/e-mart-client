@@ -17,7 +17,6 @@ function App() {
   return (
     <>
       <NavComponent>
-        <Nav></Nav>
         <Routes>
           <Route path="/" element={<HomePage></HomePage>}></Route>
           <Route path="/" element={<HomePage></HomePage>}></Route>

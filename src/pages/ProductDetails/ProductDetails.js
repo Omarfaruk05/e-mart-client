@@ -7,6 +7,7 @@ import { getProductDetails } from "../../features/productDetails/productDetails"
 import { useParams, Link } from "react-router-dom";
 import ProductDetailsLoader from "../Loader/ProductDetailsLoader";
 import { addToCart } from "../../features/cart/cartSlice";
+import { getProducts } from "../../features/product/productSlice";
 const ProductDetails = () => {
   const [num, setNum] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -17,13 +18,17 @@ const ProductDetails = () => {
     (state) => state.productDetails
   );
   console.log(productDetails);
-  const { smartWatchs, isLoading: smartwatchLoading } = useSelector(
-    (state) => state.smartWatchs
+  const { products, isLoading: smartwatchLoading } = useSelector(
+    (state) => state.products
   );
 
   useEffect(() => {
     dispatch(getProductDetails(id));
   }, [dispatch, id]);
+
+  useEffect(() => {
+    dispatch(getProducts(productDetails?.category));
+  }, [dispatch, productDetails]);
 
   const handleQuantity = (operator) => {
     if (operator === "increase") {
@@ -365,23 +370,34 @@ const ProductDetails = () => {
             <div className="md:w-1/3">
               <h3 className="text-2xl font-bold my-1">Related Products</h3>
               <div className="py-2 rounded">
-                {smartWatchs.status ? (
-                  smartWatchs?.data.map((product) => (
+                {products.status ? (
+                  products?.data.map((product) => (
                     <div
                       onClick={() => navigateToProductDetails(product?._id)}
                       className="flex items-center gap-3 p-2 m-4 bg-base-100 rounded hover:shadow-lg"
                     >
                       <div>
-                        <img
-                          className="w-28"
-                          src={product?.productImage[0]}
-                          alt=""
-                        />
+                        <Link to={`/product/${product?._id}`}>
+                          <img
+                            className="w-28"
+                            src={product?.productImage[0]}
+                            alt=""
+                          />
+                        </Link>
                       </div>
                       <div>
-                        <h4>{product?.productName.slice(0, 20)}.....</h4>
-                        <p className="text-orange-500">{product?.price}</p>
-                        <button className="btn btn-success px-6 btn-sm mt-3 text-white font-semibold uppercase">
+                        <div>
+                          <Link to={`/product/${product?._id}`}>
+                            <h4>{product?.productName.slice(0, 20)}.....</h4>
+                            <p className="text-orange-500">{product?.price}</p>
+                          </Link>
+                        </div>
+                        <button
+                          onClick={() =>
+                            dispatch(addToCart({ product, quantity: 1 }))
+                          }
+                          className="btn btn-success px-6 btn-sm mt-3 text-white font-semibold uppercase"
+                        >
                           <span>
                             <ShoppingCartIcon className="w-5 mr-2"></ShoppingCartIcon>
                           </span>

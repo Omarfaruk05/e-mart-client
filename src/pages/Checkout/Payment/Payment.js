@@ -204,6 +204,18 @@ const Payment = () => {
                 ))}
                 <hr />
                 <div className="grid grid-cols-4 gap-2 p-2 bg-base-100">
+                  <p className="text-lg font-bold col-span-3">Sub-Total</p>
+                  <p>
+                    <span> ৳ </span>
+                    <span>
+                      {cart.reduce(
+                        (total, item) => total + item.price * item.quantity,
+                        0
+                      )}
+                    </span>
+                  </p>
+                </div>
+                <div className="grid grid-cols-4 gap-2 p-2 bg-base-100">
                   <p className="text-lg font-bold col-span-3">Shipping</p>
                   <p>
                     <span> ৳ </span>
@@ -211,21 +223,6 @@ const Payment = () => {
                   </p>
                 </div>
                 <hr />
-                <div className="grid grid-cols-4 gap-2 p-2 bg-base-100">
-                  <p className="text-lg font-bold col-span-3">Vat</p>
-                  <p>
-                    <span> ৳ </span>
-                    <span>
-                      {cart.reduce(
-                        (total, item) =>
-                          Math.round(
-                            (total + item.price * item.quantity) * 0.01
-                          ),
-                        0
-                      )}
-                    </span>
-                  </p>
-                </div>
                 <hr />
                 <div className="grid grid-cols-4 gap-2 p-2 bg-slate-200 text-xl font-bold text-orange-500">
                   <h3 className="col-span-3">Total</h3>
@@ -234,12 +231,7 @@ const Payment = () => {
                     <span>
                       {cart.reduce(
                         (total, item) =>
-                          total +
-                          item.price * item.quantity +
-                          Math.round(
-                            (total + item.price * item.quantity) * 0.01
-                          ) +
-                          130,
+                          total + item.price * item.quantity + 130,
                         0
                       )}
                     </span>

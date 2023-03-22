@@ -6,14 +6,15 @@ import {
 } from "@heroicons/react/24/outline";
 import ShopingCart from "../ShopingCart/ShopingCart";
 import Header from "../Header/Header";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginRegistration from "../LoginRegistration/LoginRegistration";
 import { useSelector } from "react-redux";
+import Nav from "../Nav/Nav";
 
 const NavComponent = ({ children }) => {
   const [showSearch, setShowSearch] = useState(false);
   const [showCart, setShowCart] = useState(false);
-
+  const navigate = useNavigate();
   const { cart } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
 
@@ -26,8 +27,8 @@ const NavComponent = ({ children }) => {
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* <!-- Navbar --> */}
-          <div className="bg-slate-800 w-full">
-            <Header></Header>
+          <Header></Header>
+          <div className="bg-slate-800 w-full sticky -top-1 z-20">
             <div className="md:mt-0 mx-auto w-full max-w-7xl text-center top-7 flex justify-between navbar">
               <div className="flex-none lg:hidden">
                 <label
@@ -49,11 +50,16 @@ const NavComponent = ({ children }) => {
                   </svg>
                 </label>
               </div>
-              <Link to="/">
-                <div className="flex justify-between text-xl font-bold text-primary px-2 mx-2">
-                  E Mart
+              <div>
+                <Link to="/">
+                  <div className="flex justify-between text-xl font-bold text-primary px-2 mx-2">
+                    E Mart
+                  </div>
+                </Link>
+                <div className="hidden lg:block">
+                  <Nav></Nav>
                 </div>
-              </Link>
+              </div>
 
               <div className="hidden md:block">
                 <form>
@@ -108,17 +114,22 @@ const NavComponent = ({ children }) => {
               </div>
             </div>
           </div>
+          {/* search form for mobile  */}
           <div
-            className={showSearch ? "block text-center mb-3 z-20" : "hidden"}
+            className={
+              showSearch
+                ? "block w-full text-center py-2 z-30 top-30"
+                : "hidden"
+            }
           >
             <form>
               <input
                 type="text"
                 placeholder="Type here"
-                className="input input-bordered w-60"
+                className="input input-sm input-bordered w-30"
               />
               <input
-                className="btn btn-primary ml-2"
+                className="btn btn-sm btn-primary ml-2"
                 type="submit"
                 value="Serch"
               />
@@ -135,11 +146,35 @@ const NavComponent = ({ children }) => {
           <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-60 md:w-72 bg-base-100">
             {/* <!-- Sidebar content here --> */}
-            <li>
-              <a>Sidebar Item 1</a>
+            <li className=" border-b disabled">
+              <a>Computer & Accessories</a>
             </li>
-            <li>
-              <a>Sidebar Item 2</a>
+            <li className=" border-b disabled">
+              <a>Mobile & Tablet</a>
+            </li>
+            <li
+              onClick={() => navigate("products/SmartWatch")}
+              className=" border-b"
+            >
+              <a>Watch & Smart Watch</a>
+            </li>
+            <li
+              onClick={() => navigate("products/Headphone")}
+              className=" border-b"
+            >
+              <a>Audio & Headphones</a>
+            </li>
+            <li className=" border-b disabled">
+              <a>Telivition & Desplay</a>
+            </li>
+            <li className=" border-b disabled">
+              <a>Electronics</a>
+            </li>
+            <li className=" border-b disabled">
+              <a>Office Supplies</a>
+            </li>
+            <li className="disabled">
+              <a>Printer & Ink</a>
             </li>
           </ul>
         </div>

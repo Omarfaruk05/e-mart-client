@@ -24,7 +24,10 @@ const HomePage = () => {
     dispatch(getHeadphones("Headphone"));
   }, [dispatch]);
   return (
-    <div style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <div
+      className="-mt-4 md:mt-0"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       <Banner></Banner>
       <Discounts></Discounts>
       <DealOfWeek></DealOfWeek>

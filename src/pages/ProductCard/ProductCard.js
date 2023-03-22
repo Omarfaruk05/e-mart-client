@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
   return (
     <div>
       <div className="bg-base-100 rounded-sm shadow-sm hover:shadow-lg mb-8 relative">
-        <Link to={`product/${product?._id}`}>
+        <Link to={`/product/${product?._id}`}>
           <div className="h-[560px] md:h-[380px]" onClick={() => navigate(``)}>
             <div className="">
               <div>

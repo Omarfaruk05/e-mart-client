@@ -106,7 +106,20 @@ const Receipt = () => {
             </>
           ))}
           <hr className="mx-2" />
-          <div className="grid grid-cols-8 gap-2 p-2 bg-base-100">
+          <div className="grid grid-cols-8 gap-2 p-2 bg-base-100 mx-2">
+            <p className="text-lg font-bold col-span-7">Sub-Total</p>
+            <p>
+              <span> ৳ </span>
+              <span>
+                {cart.reduce(
+                  (total, item) => total + item.price * item.quantity,
+                  0
+                )}
+              </span>
+            </p>
+          </div>
+          <hr className="mx-2" />
+          <div className="grid grid-cols-8 gap-2 p-2 bg-base-100 mx-2">
             <p className="text-lg font-bold col-span-7">Shipping</p>
             <p>
               <span> ৳ </span>
@@ -114,21 +127,7 @@ const Receipt = () => {
             </p>
           </div>
           <hr className="mx-2" />
-          <div className="grid grid-cols-8 gap-2 p-2 bg-base-100">
-            <p className="text-lg font-bold col-span-7">Vat</p>
-            <p>
-              <span> ৳ </span>
-              <span>
-                {cart.reduce(
-                  (total, item) =>
-                    Math.round((total + item.price * item.quantity) * 0.01),
-                  0
-                )}
-              </span>
-            </p>
-          </div>
-          <hr className="mx-2" />
-          <div className="grid grid-cols-8 gap-2 p-2 bg-slate-200 font-bold text-xl text-orange-600">
+          <div className="grid grid-cols-8 gap-2 p-2 bg-slate-200 font-bold text-xl text-orange-600 mx-2">
             <p className="col-span-7">Total</p>
             <p>
               <span> ৳ </span>
@@ -156,7 +155,7 @@ const Receipt = () => {
               </Link>
             </div>
             <div className="text-center">
-              <Link to={"/delivery"}>
+              <Link to={""}>
                 <button className="mx-2 btn btn-warning text-white font-bold my-4 rounded-sm">
                   Print
                 </button>
