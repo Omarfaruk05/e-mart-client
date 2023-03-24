@@ -34,7 +34,7 @@ const TabletAndMobile = () => {
                   ))}
             </div>
             <div className="text-center">
-              <button className=" bg-green-400 px-5 py-1 rounded-sm font-semibold uppercase">
+              <button className="btn btn-sm btn-primary px-5 py-1 rounded-md font-semibold uppercase">
                 See More
               </button>
             </div>

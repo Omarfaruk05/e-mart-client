@@ -6,14 +6,14 @@ const Nav = () => {
   return (
     <div
       tabIndex={0}
-      className="dropdown p-2 w-52 bg-yellow-400 text-black rounded"
+      className="dropdown p-2 w-52 bg-primary text-white rounded"
     >
       <label tabIndex={1}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          className="inline-block mb-1 mr-1 text-green-800 w-5 h-5 stroke-current"
+          className="inline-block mb-1 mr-1 text-white w-5 h-5 stroke-current"
         >
           <path
             strokeLinecap="round"
@@ -26,7 +26,7 @@ const Nav = () => {
       <label tabIndex={0}>CATAGORY</label>
       <ul
         tabIndex={0}
-        className="dropdown-content -ml-2 mt-2 menu shadow bg-base-100 w-52 font-normal text-sm "
+        className="dropdown-content -ml-2 mt-2 menu shadow bg-base-100 w-52 font-normal text-sm  text-black"
       >
         <li className=" border-b disabled">
           <a>Computer & Accessories</a>
