@@ -10,20 +10,20 @@ const ProductCard = ({ product }) => {
 
   return (
     <div>
-      <div className="bg-base-100 rounded-sm shadow-sm hover:shadow-lg mb-8 relative">
+      <div className="bg-base-100 rounded-md shadow-md border hover:shadow-lg mb-8 relative">
         <Link to={`/product/${product?._id}`}>
-          <div className="h-[560px] md:h-[380px]" onClick={() => navigate(``)}>
+          <div className="" onClick={() => navigate(``)}>
             <div className="">
               <div>
                 <img
-                  className=" mx-auto rounded-t-sm bg-gray-300 w-full h-52 mt-2"
+                  className=" mx-auto rounded-md bg-gray-300 w-full min-h-52"
                   src={product?.productImage[0]}
                   alt=""
                 />
               </div>
               <div className="px-3">
                 <h3 className="text-normal sm:text-sm font-bold text-gray-600">
-                  {product?.productName.slice(0, 20)} ...
+                  {product?.productName.slice(0, 15)} ...
                 </h3>
                 <h2 className="text-2xl font-semibold text-green-500">
                   <span className="font-normal">৳ </span>
@@ -40,19 +40,19 @@ const ProductCard = ({ product }) => {
             </div>
           </div>
         </Link>
-        <div className="text-center absolute bottom-0 w-full">
+        <div className="text-center m-2">
           <Link to={"/delivery"}>
             {" "}
             <button
               onClick={() => dispatch(addToCart({ product, quantity: 1 }))}
-              className="btn btn-sm rounded-sm w-full text-sm btn-primary px-2 py-1 mb-2 uppercase font-semibold font"
+              className="btn btn-sm rounded-md hover:border-orange-500 w-full text-sm btn-primary px-2 py-1 mb-2 uppercase font-semibold font"
             >
               Buy Now
             </button>
           </Link>
           <button
             onClick={() => dispatch(addToCart({ product, quantity: 1 }))}
-            className="btn btn-sm rounded-sm w-full btn-primary text-sm py-1 px-2 uppercase font-semibold font"
+            className="btn btn-sm rounded-md hover:border-orange-500 w-full btn-primary text-sm py-1 px-2 uppercase font-semibold font"
           >
             Add to Cart
           </button>

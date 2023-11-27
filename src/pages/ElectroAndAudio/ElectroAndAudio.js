@@ -6,6 +6,7 @@ import ElectroAndaudioNav from "../ElectroAndAudioNav/ElectroAndaudioNav";
 import ProductCard from "../ProductCard/ProductCard";
 import ProductCartLoader from "../Loader/ProductCartLoader";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ElectroAndAudio = () => {
   const { smartWatchs } = useSelector((state) => state.smartWatchs);
@@ -29,7 +30,7 @@ const ElectroAndAudio = () => {
               navItemNames={navItemNames}
             ></ElectroAndaudioNav>
             <Brands></Brands>
-            <div className="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-5 my-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 my-4">
               {smartWatchs.status
                 ? smartWatchs.data.map((product) => (
                     <ProductCard
@@ -42,9 +43,11 @@ const ElectroAndAudio = () => {
                   ))}
             </div>
             <div className="text-center">
-              <button className=" btn btn-sm btn-primary px-5 py-1 rounded-md font-semibold uppercase">
-                See More
-              </button>
+              <Link to={"/products/SmartWatch"}>
+                <button className=" btn btn-sm btn-primary px-5 py-1 rounded-md font-semibold uppercase">
+                  See More
+                </button>
+              </Link>
             </div>
           </div>
         </div>

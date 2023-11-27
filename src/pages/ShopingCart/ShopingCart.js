@@ -6,11 +6,15 @@ import { removeFromCart } from "../../features/cart/cartSlice";
 const ShopingCart = ({ showCart, setShowCart }) => {
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.cart);
+
+  const handlePromoCode = (e) => {
+    e.preventDefault();
+  };
   return (
     <div
       className={
         showCart
-          ? "z-30 overflow-auto fixed right-4 duration-500 ease-in-out block w-80 md:w-96 h-screen bg-base-100"
+          ? "z-30 overflow-auto fixed right-0 duration-500 ease-in-out block w-80 md:w-96 h-screen bg-base-100"
           : "none w-0 h-0"
       }
     >
@@ -54,22 +58,22 @@ const ShopingCart = ({ showCart, setShowCart }) => {
             </div>
           </>
         ))}
-        <div className="fixed bottom-0 bg-base-100 w-60 md:w-96">
+        <div className="fixed bottom-0 bg-base-100 w-full md:w-96">
           <div className="bg-slate-300 p-3">
-            <form>
+            <form onSubmit={handlePromoCode}>
               <input
                 className="input input-sm mr-4 w-48 md:w-60 rounded-sm"
                 type="text"
                 placeholder="Promo Code"
               />
               <input
-                className="btn btn-sm btn-primary font-bold px-5 rounded-sm"
+                className="btn btn-sm btn-primary font-bold px-5 rounded-md"
                 type="submit"
                 value="Apply"
               />
             </form>
           </div>
-          <div className="flex justify-between w-60 md:w-96 px-4 my-2">
+          <div className="flex justify-between w-80 md:w-96 px-4 my-2">
             <p>Sub-Total</p>
             <p className="font-bold">
               {cart.reduce(
@@ -79,7 +83,7 @@ const ShopingCart = ({ showCart, setShowCart }) => {
             </p>
           </div>
           <hr />
-          <div className="flex justify-between w-60 md:w-96 px-4 my-2">
+          <div className="flex justify-between w-80 md:w-96 px-4 my-2">
             <p>Total</p>
             <p className="font-bold">
               {cart.reduce(
@@ -95,7 +99,7 @@ const ShopingCart = ({ showCart, setShowCart }) => {
           <Link to={"cart-items"}>
             <button
               onClick={() => setShowCart(!showCart)}
-              className=" mt-1 btn w-60 md:w-96 rounded-none bg-orange-500 text-white font-bold"
+              className=" mt-1 btn w-80 md:w-96 rounded-md bg-orange-500 text-white font-bold"
             >
               Checkout
             </button>

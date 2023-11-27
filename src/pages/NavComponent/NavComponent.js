@@ -18,8 +18,8 @@ const NavComponent = ({ children }) => {
   const { cart } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
 
-  const handleSearch = () => {
-    setShowSearch(!showSearch);
+  const handleSearch = (e) => {
+    e.preventDefault();
   };
   return (
     <div className="">
@@ -62,7 +62,7 @@ const NavComponent = ({ children }) => {
               </div>
 
               <div className="hidden md:block">
-                <form>
+                <form onSubmit={handleSearch}>
                   <input
                     type="text"
                     placeholder="Search here..."
@@ -77,7 +77,7 @@ const NavComponent = ({ children }) => {
               </div>
               <div className="flex-none text-center text-white">
                 <MagnifyingGlassIcon
-                  onClick={handleSearch}
+                  onClick={() => setShowSearch(!showSearch)}
                   className=" w-6 mr-3 block md:hidden"
                 ></MagnifyingGlassIcon>
 

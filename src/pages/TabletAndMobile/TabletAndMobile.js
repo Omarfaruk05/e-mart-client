@@ -6,6 +6,7 @@ import Brands from "../Brands/Brands";
 import ElectroAndaudioNav from "../ElectroAndAudioNav/ElectroAndaudioNav";
 import ProductCartLoader from "../Loader/ProductCartLoader";
 import ProductCard from "../ProductCard/ProductCard";
+import { Link } from "react-router-dom";
 
 const TabletAndMobile = () => {
   const { headphones } = useSelector((state) => state.headphones);
@@ -21,7 +22,7 @@ const TabletAndMobile = () => {
               navItemNames={navItemNames}
             ></ElectroAndaudioNav>
             <Brands></Brands>
-            <div className="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-5 my-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 my-4">
               {headphones.status
                 ? headphones.data.map((product) => (
                     <ProductCard
@@ -34,9 +35,11 @@ const TabletAndMobile = () => {
                   ))}
             </div>
             <div className="text-center">
-              <button className="btn btn-sm btn-primary px-5 py-1 rounded-md font-semibold uppercase">
-                See More
-              </button>
+              <Link to={"/products/Headphone"}>
+                <button className="btn btn-sm btn-primary px-5 py-1 rounded-md font-semibold uppercase">
+                  See More
+                </button>
+              </Link>
             </div>
           </div>
           <div className="hidden mt-14 lg:block md:w-2/6">
