@@ -1,10 +1,8 @@
 import "./App.css";
-import NavComponent from "./pages/NavComponent/NavComponent";
 import HomePage from "./pages/HomePage/HomePage";
-import Nav from "./pages/Nav/Nav";
 import { Route, Routes } from "react-router-dom";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
-import Footer from "./pages/Footer/Footer";
+import Footer from "./components/shared/footer/Footer";
 import Products from "./pages/Products/Products";
 import CartItems from "./pages/Checkout/CartItems/CartItems";
 import Delivery from "./pages/Checkout/ConfirmOrder/ConfirmOrder";
@@ -12,6 +10,7 @@ import Payment from "./pages/Checkout/Payment/Payment";
 import Receipt from "./pages/Checkout/Receipt/Receipt";
 import Dashboard from "./pages/DashboardContainer/Dashboard/Dashboard";
 import DashboardHome from "./pages/DashboardContainer/DashboardHome/DashboardHome";
+import NavComponent from "./components/shared/navbar/NavComponent";
 
 function App() {
   return (
