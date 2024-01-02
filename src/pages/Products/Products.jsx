@@ -4,7 +4,7 @@ import backgroundImage from "../../assets/banner/bg-t.png";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../../features/product/productSlice";
+import { getProducts } from "../../redux/features/product/productSlice";
 import ProductCard from "../../components/shared/ProductCard/ProductCard";
 import ProductCartLoader from "../../components/shared/Loader/ProductCartLoader";
 import ScrollToTop from "../../lib/ScrollToTop";

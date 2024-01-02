@@ -12,7 +12,7 @@ import {
   addToCart,
   decreaseQuantity,
   removeFromCart,
-} from "../../../features/cart/cartSlice";
+} from "../../../redux/features/cart/cartSlice";
 
 const CartItems = () => {
   const dispatch = useDispatch();

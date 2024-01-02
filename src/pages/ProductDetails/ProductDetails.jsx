@@ -3,10 +3,10 @@ import React, { useEffect, useState } from "react";
 import backgroundImage from "../../assets/banner/bg-t.png";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { useDispatch, useSelector } from "react-redux";
-import { getProductDetails } from "../../features/productDetails/productDetails";
+import { getProductDetails } from "../../redux/features/productDetails/productDetails";
 import { useParams, Link } from "react-router-dom";
-import { addToCart } from "../../features/cart/cartSlice";
-import { getProducts } from "../../features/product/productSlice";
+import { addToCart } from "../../redux/features/cart/cartSlice";
+import { getProducts } from "../../redux/features/product/productSlice";
 import ProductDetailsLoader from "../../components/shared/Loader/ProductDetailsLoader";
 import ScrollToTop from "../../lib/ScrollToTop";
 const ProductDetails = () => {

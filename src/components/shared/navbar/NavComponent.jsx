@@ -17,6 +17,7 @@ const NavComponent = ({ children }) => {
   const navigate = useNavigate();
   const { cart } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
+  console.log(user);
 
   const handleSearch = (e) => {
     e.preventDefault();

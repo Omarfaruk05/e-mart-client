@@ -1,7 +1,7 @@
 import { TrashIcon } from "@heroicons/react/24/solid";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { removeFromCart } from "../../features/cart/cartSlice";
+import { removeFromCart } from "../../redux/features/cart/cartSlice";
 
 const ShopingCart = ({ showCart, setShowCart }) => {
   const dispatch = useDispatch();

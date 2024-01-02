@@ -11,24 +11,17 @@ import BestProducts from "../../components/home/BestProducts";
 import FlashSellBanner from "../../components/home/FlashSellBanner";
 import ClientsComment from "../../components/home/ClientsComment";
 import Subscribe from "../../components/home/Subscribe";
-import { getSmartWatchs } from "../../features/smartWatchs/smartWatchsSlice";
+import { getSmartWatchs } from "../../redux/features/smartWatchs/smartWatchsSlice";
 import { useDispatch } from "react-redux";
-import { getHeadphones } from "../../features/headphones/headphonesSlice";
-import { getMe } from "../../features/user/userSlice";
+import { getHeadphones } from "../../redux/features/headphones/headphonesSlice";
 
 const HomePage = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getMe());
-    dispatch(getSmartWatchs("SmartWatch"));
-    dispatch(getHeadphones("Headphone"));
-  }, [dispatch]);
   return (
     <div
       className="-mt-4 md:mt-0"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <Banner></Banner>
+      {/* <Banner></Banner>
       <Discounts></Discounts>
       <DealOfWeek></DealOfWeek>
       <ElectroAndAudio></ElectroAndAudio>
@@ -39,7 +32,7 @@ const HomePage = () => {
       <FlashSellBanner></FlashSellBanner>
       <ClientsComment></ClientsComment>
       <AllBrands></AllBrands>
-      <Subscribe></Subscribe>
+      <Subscribe></Subscribe> */}
     </div>
   );
 };

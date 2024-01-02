@@ -11,6 +11,8 @@ import Receipt from "./pages/Checkout/Receipt/Receipt";
 import Dashboard from "./pages/DashboardContainer/Dashboard/Dashboard";
 import DashboardHome from "./pages/DashboardContainer/DashboardHome/DashboardHome";
 import NavComponent from "./components/shared/navbar/NavComponent";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -36,6 +38,7 @@ function App() {
           </Route>
         </Routes>
         <Footer></Footer>
+        <ToastContainer />
       </NavComponent>
     </>
   );
