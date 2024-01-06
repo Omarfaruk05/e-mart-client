@@ -6,10 +6,8 @@ import Brands from "./Brands";
 import ElectroAndaudioNav from "./ElectroAndaudioNav";
 import { Link } from "react-router-dom";
 import ProductCard from "../shared/ProductCard/ProductCard";
-import ProductCartLoader from "../shared/Loader/ProductCartLoader";
 
 const TabletAndMobile = () => {
-  const { headphones } = useSelector((state) => state.headphones);
   const navItemNames = "HeadPhone";
   const num = [1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -23,16 +21,10 @@ const TabletAndMobile = () => {
             ></ElectroAndaudioNav>
             <Brands></Brands>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 my-4">
-              {headphones.status
-                ? headphones.data.map((product) => (
-                    <ProductCard
-                      product={product}
-                      key={product._id}
-                    ></ProductCard>
-                  ))
-                : num.map((x) => (
-                    <ProductCartLoader key={x}></ProductCartLoader>
-                  ))}
+              {num &&
+                num.map((product) => (
+                  <ProductCard product={product} key={product}></ProductCard>
+                ))}
             </div>
             <div className="text-center">
               <Link to={"/products/Headphone"}>

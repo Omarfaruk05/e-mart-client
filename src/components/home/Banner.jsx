@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-distracting-elements */
 import React from "react";
 import banner1 from "../../assets/banner/banner1.jpg";
 import banner2 from "../../assets/banner/banner2.jpg";

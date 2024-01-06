@@ -21,7 +21,7 @@ const HomePage = () => {
       className="-mt-4 md:mt-0"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      {/* <Banner></Banner>
+      <Banner></Banner>
       <Discounts></Discounts>
       <DealOfWeek></DealOfWeek>
       <ElectroAndAudio></ElectroAndAudio>
@@ -32,7 +32,7 @@ const HomePage = () => {
       <FlashSellBanner></FlashSellBanner>
       <ClientsComment></ClientsComment>
       <AllBrands></AllBrands>
-      <Subscribe></Subscribe> */}
+      <Subscribe></Subscribe>
     </div>
   );
 };

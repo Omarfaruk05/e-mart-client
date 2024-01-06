@@ -2,31 +2,12 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import backgroundImage from "../../assets/banner/bg-t.png";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { getProducts } from "../../redux/features/product/productSlice";
 import ProductCard from "../../components/shared/ProductCard/ProductCard";
-import ProductCartLoader from "../../components/shared/Loader/ProductCartLoader";
 import ScrollToTop from "../../lib/ScrollToTop";
 
 const Products = () => {
-  const [minRange, setMinRange] = useState(0);
-  const [maxRange, setMaxRange] = useState(1000);
-  const dispatch = useDispatch();
-  const { productCategory } = useParams();
-  console.log(productCategory);
-
-  const { products, isLoading, isError } = useSelector(
-    (state) => state.products
-  );
-  console.log(products);
   const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-  useEffect(() => {
-    dispatch(getProducts(productCategory));
-  }, [dispatch, productCategory]);
-
-  console.log(minRange, maxRange);
   return (
     <div style={{ backgroundImage: `url(${backgroundImage})` }}>
       <ScrollToTop />
@@ -59,16 +40,13 @@ const Products = () => {
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 mt-4 justify-center items-center">
-                {products.status
-                  ? products.data.map((product) => (
-                      <ProductCard
-                        product={product}
-                        key={product._id}
-                      ></ProductCard>
-                    ))
-                  : num.map((x) => (
-                      <ProductCartLoader key={x}></ProductCartLoader>
-                    ))}
+                {num &&
+                  num.map((product) => (
+                    <ProductCard
+                      product={product}
+                      key={product._id}
+                    ></ProductCard>
+                  ))}
               </div>
             </div>
           </div>
