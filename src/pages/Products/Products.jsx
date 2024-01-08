@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
 import backgroundImage from "../../assets/banner/bg-t.png";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 import ProductCard from "../../components/shared/ProductCard/ProductCard";
 import ScrollToTop from "../../lib/ScrollToTop";
-
+import { useGetAllProductQuery } from "../../redux/features/product/productApi";
 const Products = () => {
-  const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  // const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+  const { data } = useGetAllProductQuery();
+  const products = data?.data;
 
   return (
     <div style={{ backgroundImage: `url(${backgroundImage})` }}>
@@ -40,8 +42,8 @@ const Products = () => {
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5 mt-4 justify-center items-center">
-                {num &&
-                  num.map((product) => (
+                {products &&
+                  products.map((product) => (
                     <ProductCard
                       product={product}
                       key={product._id}

@@ -1,7 +1,12 @@
+import { AUTH_KEY } from "../../../services/auth.service";
+import { getFromLocalStorage } from "../../../utils/localStorage";
 import { tagTypes } from "../../tagTypes";
 import { baseApi } from "../base/baseApi";
 
 const USER_URL = "/users";
+
+const user = getFromLocalStorage(AUTH_KEY);
+console.log(user);
 
 export const userApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
@@ -42,6 +47,9 @@ export const userApi = baseApi.injectEndpoints({
       query: () => ({
         url: `/getMe`,
         method: "GET",
+        headers: {
+          authorization: `Bearer ${user}`,
+        },
       }),
       providesTags: [tagTypes.user],
     }),
@@ -67,6 +75,7 @@ export const userApi = baseApi.injectEndpoints({
 export const {
   useAddUserMutation,
   useLoginMutation,
+  useGetMeQuery,
   useGetSingUserQuery,
   useGetUsersQuery,
   useDeleteUserMutation,

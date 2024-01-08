@@ -1,4 +1,4 @@
-import { tagTypesList } from "../../tagTypes";
+import { tagTypes } from "../../tagTypes";
 import { baseApi } from "../base/baseApi";
 
 const URL = "/products";
@@ -11,29 +11,21 @@ export const productApi = baseApi.injectEndpoints({
         method: "POST",
         data,
       }),
-      invalidatesTags: [tagTypesList.tagTypes.product],
-    }),
-    login: build.mutation({
-      query: (data) => ({
-        url: `/auth/signin`,
-        method: "POST",
-        data,
-      }),
-      invalidatesTags: [tagTypesList.tagTypes.product],
+      invalidatesTags: [tagTypes.product],
     }),
     getAllProduct: build.query({
       query: () => ({
         url: URL,
         method: "GET",
       }),
-      providesTags: [tagTypesList.tagTypes.product],
+      providesTags: [tagTypes.product],
     }),
     getSingleProduct: build.query({
       query: (id) => ({
         url: `${URL}/${id}`,
         method: "GET",
       }),
-      providesTags: [tagTypesList.tagTypes.product],
+      providesTags: [tagTypes.product],
     }),
     updateSingleProduct: build.mutation({
       query: ({ id, ...updatedData }) => ({
@@ -41,7 +33,7 @@ export const productApi = baseApi.injectEndpoints({
         method: "PATCH",
         data: updatedData,
       }),
-      invalidatesTags: [tagTypesList.tagTypes.product],
+      invalidatesTags: [tagTypes.product],
     }),
 
     deleteSingleProduct: build.mutation({
@@ -49,7 +41,7 @@ export const productApi = baseApi.injectEndpoints({
         url: `${URL}/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: [tagTypesList.tagTypes.product],
+      invalidatesTags: [tagTypes.product],
     }),
   }),
 });

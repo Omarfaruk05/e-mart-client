@@ -16,18 +16,18 @@ const ProductCard = ({ product }) => {
             <div className="">
               <div>
                 <img
-                  className=" mx-auto h-52 rounded-md bg-gray-300 w-full min-h-52"
-                  // src={product?.productImage[0]}
+                  className=" mx-auto rounded-md bg-gray-300 w-full min-h-52"
+                  src={product?.productImage[0]}
                   alt=""
                 />
               </div>
               <div className="px-3">
                 <h3 className="text-normal sm:text-sm font-bold text-gray-600">
-                  {/* {product?.productName.slice(0, 15)} ... */}
+                  {product?.productName.slice(0, 15)} ...
                 </h3>
-                <h2 className="text-2xl font-semibold text-green-500">
+                <h2 className="text-xl font-semibold text-green-500">
                   <span className="font-normal">৳ </span>
-                  {/* {product?.price} */}
+                  {product?.price}
                 </h2>
                 <div className="flex justify-start items-center my-2">
                   <StarIcon className="h-5 w-5 text-orange-400"></StarIcon>

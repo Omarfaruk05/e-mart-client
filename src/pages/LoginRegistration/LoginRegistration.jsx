@@ -49,7 +49,6 @@ const LoginRegistration = () => {
   };
 
   const { email } = getUserInfo();
-  console.log(email);
 
   return (
     <div>
