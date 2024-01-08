@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
               </div>
               <div className="px-3">
                 <h3 className="text-normal sm:text-sm font-bold text-gray-600">
-                  {product?.productName.slice(0, 15)} ...
+                  {product?.productName.slice(0, 10)} ...
                 </h3>
                 <h2 className="text-xl font-semibold text-green-500">
                   <span className="font-normal">৳ </span>
