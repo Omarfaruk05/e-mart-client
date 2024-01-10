@@ -4,11 +4,27 @@ import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 import ProductCard from "../../components/shared/ProductCard/ProductCard";
 import ScrollToTop from "../../lib/ScrollToTop";
 import { useGetAllProductQuery } from "../../redux/features/product/productApi";
+import { useParams } from "react-router-dom";
+import ProductCartLoader from "../../components/shared/Loader/ProductCartLoader";
 const Products = () => {
-  // const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const { productCategory } = useParams();
+  console.log(productCategory);
+  const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-  const { data } = useGetAllProductQuery();
+  const { data, isLoading } = useGetAllProductQuery({
+    category: productCategory,
+  });
   const products = data?.data;
+
+  if (isLoading) {
+    return (
+      <div className="flex flex-wrap max-w-7xl mx-auto my-4">
+        {num.map((x) => (
+          <ProductCartLoader></ProductCartLoader>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div style={{ backgroundImage: `url(${backgroundImage})` }}>

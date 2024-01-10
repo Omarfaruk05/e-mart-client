@@ -3,7 +3,6 @@ import sidePic1 from "../../assets/discount-photo/about-1.jpg";
 import sidePic2 from "../../assets/discount-photo/about-2.jpg";
 import Brands from "./Brands";
 import ElectroAndaudioNav from "./ElectroAndaudioNav";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ProductCard from "../shared/ProductCard/ProductCard";
 import ProductCartLoader from "../shared/Loader/ProductCartLoader";
@@ -12,13 +11,8 @@ import { useGetAllProductQuery } from "../../redux/features/product/productApi";
 const ElectroAndAudio = () => {
   const navItemNames = "SmartWatch";
   const num = [1, 2, 3, 4, 5, 6, 7, 8];
-  const { data, isLoading } = useGetAllProductQuery();
+  const { data } = useGetAllProductQuery({ category: navItemNames, limit: 8 });
   const products = data?.data;
-
-  if (isLoading) {
-    num.map((x) => <ProductCartLoader key={x} />);
-  }
-  console.log(products);
 
   return (
     <div>
@@ -38,10 +32,11 @@ const ElectroAndAudio = () => {
             ></ElectroAndaudioNav>
             <Brands></Brands>
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 my-4">
-              {products &&
-                products.map((product) => (
-                  <ProductCard product={product} key={product}></ProductCard>
-                ))}
+              {products
+                ? products.map((product) => (
+                    <ProductCard product={product} key={product}></ProductCard>
+                  ))
+                : num.map((x) => <ProductCartLoader></ProductCartLoader>)}
             </div>
             <div className="text-center">
               <Link to={"/products/SmartWatch"}>
