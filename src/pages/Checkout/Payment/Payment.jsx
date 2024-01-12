@@ -6,6 +6,7 @@ import backgroundImage from "../../../assets/banner/bg-t.png";
 
 const Payment = () => {
   const { cart } = useSelector((state) => state.cart);
+  const { user } = useSelector((state) => state.user);
 
   return (
     <div style={{ backgroundImage: `url(${backgroundImage})` }}>
@@ -50,7 +51,7 @@ const Payment = () => {
                       placeholder="First Name: *"
                       required
                       disabled
-                      value={"Md. Omar"}
+                      value={user?.firstName}
                     />
                   </label>
                   <label>
@@ -61,7 +62,7 @@ const Payment = () => {
                       placeholder="Last Name: *"
                       required
                       disabled
-                      value={"Faruk"}
+                      value={user?.lastName}
                     />
                   </label>
                 </div>

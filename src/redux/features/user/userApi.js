@@ -21,9 +21,7 @@ export const userApi = baseApi.injectEndpoints({
       query: (data) => ({
         url: `${USER_URL}/login`,
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+
         body: data,
       }),
       invalidatesTags: [tagTypes.user],

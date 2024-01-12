@@ -4,7 +4,7 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import { TrashIcon } from "@heroicons/react/24/solid";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../../assets/banner/bg-t.png";

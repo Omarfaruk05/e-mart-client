@@ -1,16 +1,13 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import { useEffect } from "react";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../../assets/banner/bg-t.png";
 
 const ConfirmOrder = () => {
-  const [user, setUser] = useState(false);
-  const [account, setAccount] = useState(false);
-
   const { cart } = useSelector((state) => state.cart);
+  const { user } = useSelector((state) => state.user);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -56,12 +53,14 @@ const ConfirmOrder = () => {
                     type="text"
                     placeholder="First Name: *"
                     required
+                    value={user?.firstName}
                   />
                   <input
                     className="input input-bordered rounded-sm w-full"
                     type="text"
                     placeholder="Last Name: *"
                     required
+                    value={user?.lastName}
                   />
                 </div>
                 <div>
@@ -123,51 +122,6 @@ const ConfirmOrder = () => {
                     placeholder="Detail Address: *"
                     required
                   />
-                </div>
-                {!user && (
-                  <div className="flex gap-2 my-3">
-                    <input
-                      onClick={() => setAccount(!account)}
-                      type="checkbox"
-                      className="checkbox"
-                    />
-                    <label>Already Have an Account?</label>
-                  </div>
-                )}
-
-                <div>
-                  <div>
-                    <input
-                      className="input input-bordered rounded-sm w-full mb-4"
-                      type="email"
-                      name="email"
-                      id=""
-                      placeholder="Your Email: *"
-                      required
-                    />
-                  </div>
-                  {!user && (
-                    <div className="flex gap-4">
-                      <input
-                        className="input input-bordered rounded-sm w-full mb-4"
-                        type="password"
-                        name="contactNumber"
-                        id=""
-                        placeholder="Password: *"
-                        required
-                      />
-                      {!account && (
-                        <input
-                          className="input input-bordered rounded-sm w-full mb-4"
-                          type="password"
-                          name="contactNumber"
-                          id=""
-                          placeholder="Confirm Password: *"
-                          required
-                        />
-                      )}
-                    </div>
-                  )}
                 </div>
               </form>
             </div>
