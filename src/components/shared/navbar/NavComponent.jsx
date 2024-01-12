@@ -6,21 +6,32 @@ import {
 } from "@heroicons/react/24/outline";
 import ShopingCart from "../../../pages/ShopingCart/ShopingCart";
 import Header from "../../ui/Header";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import LoginRegistration from "../../../pages/LoginRegistration/LoginRegistration";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Nav from "./Nav";
+import {
+  AUTH_KEY,
+  getUserInfo,
+  removeUserInfo,
+} from "../../../services/auth.service";
+import { removeUserFromRedux } from "../../../redux/features/user/userSlice";
 
 const NavComponent = ({ children }) => {
+  const dispatch = useDispatch();
   const [showSearch, setShowSearch] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const navigate = useNavigate();
   const { cart } = useSelector((state) => state.cart);
-  const { user } = useSelector((state) => state.user);
-  console.log(user);
+  const { email } = getUserInfo();
 
   const handleSearch = (e) => {
     e.preventDefault();
+  };
+
+  const handleLogout = () => {
+    removeUserInfo(AUTH_KEY);
+    dispatch(removeUserFromRedux());
   };
   return (
     <div className="">
@@ -76,7 +87,7 @@ const NavComponent = ({ children }) => {
                   />
                 </form>
               </div>
-              <div className="flex-none text-center text-white">
+              <div className="flex-none text-center  text-white">
                 <MagnifyingGlassIcon
                   onClick={() => setShowSearch(!showSearch)}
                   className=" w-6 mr-3 block md:hidden"
@@ -86,15 +97,39 @@ const NavComponent = ({ children }) => {
                   {/* <!-- Navbar menu content here --> */}
                   <li>
                     <a>
-                      {user?._id ? (
-                        <label htmlFor="login-registration-modal">
-                          <div className="bg-green-500 rounded-full">
+                      {email ? (
+                        <div className="dropdown dropdown-end">
+                          <div tabIndex={1} role="button">
                             <UserIcon className=" h-6 w-6"></UserIcon>
                           </div>
-                        </label>
+                          <ul
+                            tabIndex={1}
+                            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-52"
+                          >
+                            <li>
+                              <NavLink
+                                tabIndex={1}
+                                to={"/dashboard"}
+                                className=" w-full text-black h-8"
+                              >
+                                Dashboard
+                              </NavLink>
+                            </li>
+                            <hr className="mx-2" />
+                            <li>
+                              <p className=" w-full text-black h-8">Profile</p>
+                            </li>
+                            <hr className="mx-2" />
+                            <li onClick={handleLogout}>
+                              <p className=" w-full text-black h-8">Logout</p>
+                            </li>
+                          </ul>
+                        </div>
                       ) : (
                         <label htmlFor="login-registration-modal">
-                          <UserIcon className=" h-6 w-6"></UserIcon>
+                          <span className="border border-dashed rounded-sm px-1">
+                            Login
+                          </span>
                         </label>
                       )}
                     </a>

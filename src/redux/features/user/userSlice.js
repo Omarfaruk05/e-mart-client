@@ -11,7 +11,10 @@ const userSlice = createSlice({
     storeUserInRedux: (state, action) => {
       state.user = action.payload;
     },
+    removeUserFromRedux: (state, action) => {
+      state.user = initialState;
+    },
   },
 });
-export const { storeUserInRedux } = userSlice.actions;
+export const { storeUserInRedux, removeUserFromRedux } = userSlice.actions;
 export default userSlice.reducer;

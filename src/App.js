@@ -13,8 +13,16 @@ import DashboardHome from "./pages/DashboardContainer/DashboardHome/DashboardHom
 import NavComponent from "./components/shared/navbar/NavComponent";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useGetMeQuery } from "./redux/features/user/userApi";
+import { useDispatch } from "react-redux";
+import { storeUserInRedux } from "./redux/features/user/userSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  const { data } = useGetMeQuery();
+
+  dispatch(storeUserInRedux(data?.data));
+
   return (
     <>
       <NavComponent>

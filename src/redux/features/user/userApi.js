@@ -5,8 +5,7 @@ import { baseApi } from "../base/baseApi";
 
 const USER_URL = "/users";
 
-const user = getFromLocalStorage(AUTH_KEY);
-console.log(user);
+const userToken = getFromLocalStorage(AUTH_KEY);
 
 export const userApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
@@ -45,10 +44,10 @@ export const userApi = baseApi.injectEndpoints({
     }),
     getMe: build.query({
       query: () => ({
-        url: `/getMe`,
+        url: `${USER_URL}/getMe`,
         method: "GET",
         headers: {
-          authorization: `Bearer ${user}`,
+          authorization: `Bearer ${userToken}`,
         },
       }),
       providesTags: [tagTypes.user],
