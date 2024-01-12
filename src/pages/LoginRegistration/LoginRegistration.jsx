@@ -16,6 +16,7 @@ const LoginRegistration = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -42,6 +43,7 @@ const LoginRegistration = () => {
         toast.success(res?.message);
         await storeUserInfo({ accessToken: res?.data?.token });
         dispatch(storeUserInRedux(res?.data?.user));
+        reset();
       }
     } catch (error) {
       console.log(error.message);
@@ -73,7 +75,7 @@ const LoginRegistration = () => {
                 <button
                   onClick={handleLogin}
                   className={
-                    login
+                    loginUser
                       ? `p-4 w-1/2 rounded-none text-lg font-bold bg-slate-800 text-green-600`
                       : `p-4 w-1/2 rounded-none text-lg font-bold bg-slate-50`
                   }
