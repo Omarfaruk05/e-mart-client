@@ -9,13 +9,14 @@ import Delivery from "./pages/Checkout/ConfirmOrder/ConfirmOrder";
 import Payment from "./pages/Checkout/Payment/Payment";
 import Receipt from "./pages/Checkout/Receipt/Receipt";
 import Dashboard from "./pages/DashboardContainer/Dashboard/Dashboard";
-import DashboardHome from "./pages/DashboardContainer/DashboardHome/DashboardHome";
 import NavComponent from "./components/shared/navbar/NavComponent";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useGetMeQuery } from "./redux/features/user/userApi";
 import { useDispatch } from "react-redux";
 import { storeUserInRedux } from "./redux/features/user/userSlice";
+import DashboardHome from "./pages/DashboardContainer/Dashboard/DashboardHome";
+import MyOrders from "./pages/DashboardContainer/Dashboard/MyOrders";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,10 @@ function App() {
           <Route path="/receipt" element={<Receipt></Receipt>}></Route>
           <Route path="/dashboard" element={<Dashboard></Dashboard>}>
             <Route index element={<DashboardHome></DashboardHome>}></Route>
+            <Route
+              path="/dashboard/my-orders"
+              element={<MyOrders></MyOrders>}
+            ></Route>
           </Route>
         </Routes>
         <Footer></Footer>

@@ -14,6 +14,8 @@ const ElectroAndAudio = () => {
   const { data } = useGetAllProductQuery({ category: navItemNames, limit: 8 });
   const products = data?.data;
 
+  console.log(products);
+
   return (
     <div>
       <div className="max-w-7xl mx-auto my-12 px-2">
