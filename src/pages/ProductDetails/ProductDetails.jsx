@@ -9,27 +9,18 @@ import { addToCart } from "../../redux/features/cart/cartSlice";
 import { getProducts } from "../../redux/features/product/productSlice";
 import ProductDetailsLoader from "../../components/shared/Loader/ProductDetailsLoader";
 import ScrollToTop from "../../lib/ScrollToTop";
+import { useGetSingleProductQuery } from "../../redux/features/product/productApi";
+import RelatedProducts from "./RelatedProducts";
 const ProductDetails = () => {
   const [num, setNum] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [rating, setRating] = useState(0);
   const dispatch = useDispatch();
   const { id } = useParams();
-  const { productDetails, isLoading: productDetailsLoading } = useSelector(
-    (state) => state.productDetails
-  );
+  const { data, isLoading } = useGetSingleProductQuery(id);
+  console.log(data);
+  const productDetails = data?.data;
   console.log(productDetails);
-  const { products, isLoading: smartwatchLoading } = useSelector(
-    (state) => state.products
-  );
-
-  useEffect(() => {
-    dispatch(getProductDetails(id));
-  }, [dispatch, id]);
-
-  useEffect(() => {
-    dispatch(getProducts(productDetails?.category));
-  }, [dispatch, productDetails]);
 
   const handleQuantity = (operator) => {
     if (operator === "increase") {
@@ -53,9 +44,7 @@ const ProductDetails = () => {
     setNum(num);
   };
 
-  const navigateToProductDetails = (id) => {};
-
-  if (productDetailsLoading) {
+  if (isLoading) {
     return (
       <div>
         <ScrollToTop />
@@ -374,52 +363,7 @@ const ProductDetails = () => {
               </div>
             </div>
             {/* Related products */}
-            <div className="md:w-1/3">
-              <h3 className="text-2xl font-bold my-1">Related Products</h3>
-              <div className="py-2 rounded">
-                {products.status ? (
-                  products?.data.map((product) => (
-                    <div
-                      onClick={() => navigateToProductDetails(product?._id)}
-                      className="flex items-center gap-3 p-2 m-4 bg-base-100 rounded hover:shadow-lg"
-                    >
-                      <div>
-                        <Link to={`/product/${product?._id}`}>
-                          <img
-                            className="w-28"
-                            src={product?.productImage[0]}
-                            alt=""
-                          />
-                        </Link>
-                      </div>
-                      <div>
-                        <div>
-                          <Link to={`/product/${product?._id}`}>
-                            <h4>{product?.productName.slice(0, 20)}.....</h4>
-                            <p className="text-orange-500">{product?.price}</p>
-                          </Link>
-                        </div>
-                        <button
-                          onClick={() =>
-                            dispatch(addToCart({ product, quantity: 1 }))
-                          }
-                          className="btn btn-success px-6 btn-sm mt-3 text-white font-semibold uppercase"
-                        >
-                          <span>
-                            <ShoppingCartIcon className="w-5 mr-2"></ShoppingCartIcon>
-                          </span>
-                          <span className="block md:hidden lg:block">
-                            Add To Cart
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <p>Loading</p>
-                )}
-              </div>
-            </div>
+            <RelatedProducts category={productDetails?.category} />
           </div>
         </div>
       </div>
