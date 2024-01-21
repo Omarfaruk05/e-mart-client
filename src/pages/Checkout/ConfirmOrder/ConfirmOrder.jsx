@@ -1,6 +1,5 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import React from "react";
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../../assets/banner/bg-t.png";
@@ -8,10 +7,6 @@ import backgroundImage from "../../../assets/banner/bg-t.png";
 const ConfirmOrder = () => {
   const { cart } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div style={{ backgroundImage: `url(${backgroundImage})` }}>
