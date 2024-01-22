@@ -46,11 +46,13 @@ const LoginRegistration = () => {
         reset();
       }
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
+      toast.error(error?.data?.message);
     }
   };
 
   const { email } = getUserInfo();
+  console.log(email);
 
   return (
     <div>

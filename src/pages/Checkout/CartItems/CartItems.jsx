@@ -17,7 +17,6 @@ import { getUserInfo } from "../../../services/auth.service";
 
 const CartItems = () => {
   const dispatch = useDispatch();
-  const { email } = getUserInfo();
 
   const { cart } = useSelector((state) => state.cart);
 
@@ -199,25 +198,17 @@ const CartItems = () => {
               </Link>
             </div>
             <div className="text-center">
-              {email ? (
-                <Link to={"/delivery"}>
-                  <button className="mx-2 btn btn-warning text-white font-bold my-4 rounded-sm">
-                    <span>
-                      <ShoppingCartIcon className="w-5 mr-2"></ShoppingCartIcon>
-                    </span>
-                    <span className="mt-1 mr-2">Proceed to Delivery</span>
-                    <span>
-                      <ArrowRightIcon className="w-5"></ArrowRightIcon>
-                    </span>
-                  </button>
-                </Link>
-              ) : (
-                <label htmlFor="login-registration-modal">
-                  <span className="mx-2 btn btn-primary text-white font-bold my-4 rounded-sm">
-                    Login
+              <Link to={"/delivery"}>
+                <button className="mx-2 btn btn-warning text-white font-bold my-4 rounded-sm">
+                  <span>
+                    <ShoppingCartIcon className="w-5 mr-2"></ShoppingCartIcon>
                   </span>
-                </label>
-              )}
+                  <span className="mt-1 mr-2">Proceed to Delivery</span>
+                  <span>
+                    <ArrowRightIcon className="w-5"></ArrowRightIcon>
+                  </span>
+                </button>
+              </Link>
             </div>
           </div>
         </div>

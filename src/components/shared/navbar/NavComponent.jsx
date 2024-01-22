@@ -23,8 +23,7 @@ const NavComponent = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const navigate = useNavigate();
   const { cart } = useSelector((state) => state.cart);
-  const { user } = useSelector((state) => state.user);
-  console.log(user);
+  const { email } = getUserInfo();
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -98,7 +97,7 @@ const NavComponent = ({ children }) => {
                   {/* <!-- Navbar menu content here --> */}
                   <li>
                     <a>
-                      {user?._id ? (
+                      {email ? (
                         <div className="dropdown dropdown-end">
                           <div tabIndex={1} role="button">
                             <UserIcon className=" h-6 w-6"></UserIcon>

@@ -3,10 +3,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../../assets/banner/bg-t.png";
+import { getUserInfo } from "../../../services/auth.service";
 
 const ConfirmOrder = () => {
   const { cart } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
+  const { email } = getUserInfo();
 
   return (
     <div style={{ backgroundImage: `url(${backgroundImage})` }}>
@@ -231,14 +233,22 @@ const ConfirmOrder = () => {
             </Link>
           </div>
           <div className="text-center">
-            <Link to={"/payment"}>
-              <button className="mx-2 btn btn-warning text-white font-bold my-4 rounded-sm">
-                <span className="mt-1 mr-2">Confirm Order</span>
-                <span>
-                  <ArrowRightIcon className="w-5"></ArrowRightIcon>
+            {email ? (
+              <Link to={"/payment"}>
+                <button className="mx-2 btn btn-warning text-white font-bold my-4 rounded-sm">
+                  <span className="mt-1 mr-2">Confirm Order</span>
+                  <span>
+                    <ArrowRightIcon className="w-5"></ArrowRightIcon>
+                  </span>
+                </button>
+              </Link>
+            ) : (
+              <label htmlFor="login-registration-modal">
+                <span className="mx-2 btn btn-primary text-white font-bold my-4 rounded-sm">
+                  Login
                 </span>
-              </button>
-            </Link>
+              </label>
+            )}
           </div>
         </div>
       </div>
