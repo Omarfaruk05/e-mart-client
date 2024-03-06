@@ -1,23 +1,43 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../../assets/banner/bg-t.png";
 import { getUserInfo } from "../../../services/auth.service";
 import { useForm } from "react-hook-form";
+import { storeUserInRedux } from "../../../redux/features/user/userSlice";
 
 const ConfirmOrder = () => {
+  const dispatch = useDispatch();
   const [saveInfo, setSaveInfo] = useState(false);
   const { cart } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
   const { email } = getUserInfo();
 
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit } = useForm();
+
+  useEffect(() => {
+    if (
+      user?.street ||
+      user?.town ||
+      user?.country ||
+      user?.postOrZipCode ||
+      user?.contactNumber ||
+      user?.address
+    ) {
+      setSaveInfo(true);
+    }
+  }, [user]);
 
   const onsubmit = (data) => {
-    console.log(data);
+    data.role = user?.role;
+    data._id = user?._id;
+    data.email = user?.email;
+    dispatch(storeUserInRedux(data));
     setSaveInfo(true);
   };
+
+  console.log(user);
 
   return (
     <div style={{ backgroundImage: `url(${backgroundImage})` }}>
@@ -58,14 +78,14 @@ const ConfirmOrder = () => {
                     className="input input-bordered rounded-sm w-full mb-4"
                     type="text"
                     placeholder="First Name: *"
-                    required
+                    {...register("firstName", { required: true })}
                     value={user?.firstName}
                   />
                   <input
                     className="input input-bordered rounded-sm w-full"
                     type="text"
                     placeholder="Last Name: *"
-                    required
+                    {...register("lastName", { required: true })}
                     value={user?.lastName}
                   />
                 </div>
@@ -77,6 +97,7 @@ const ConfirmOrder = () => {
                     id=""
                     placeholder="House Number and Street Address *"
                     required
+                    value={user?.street}
                   />
                 </div>
                 <div>
@@ -87,6 +108,7 @@ const ConfirmOrder = () => {
                     id=""
                     placeholder="Town / City: *"
                     required
+                    value={user?.town}
                   />
                 </div>
                 <div>
@@ -97,16 +119,18 @@ const ConfirmOrder = () => {
                     id=""
                     placeholder="Country: *"
                     required
+                    value={user?.country}
                   />
                 </div>
                 <div>
                   <input
                     className="input input-bordered rounded-sm w-full mb-4"
                     type="number"
-                    {...register("portOrZipCode", { required: true })}
+                    {...register("postOrZipCode", { required: true })}
                     id=""
                     placeholder="Postcode / Zip: *"
                     required
+                    value={user?.postOrZipCode}
                   />
                 </div>
                 <div>
@@ -117,6 +141,7 @@ const ConfirmOrder = () => {
                     id=""
                     placeholder="Phone: *"
                     required
+                    value={user?.contactNumber}
                   />
                 </div>
                 <div>
@@ -127,6 +152,7 @@ const ConfirmOrder = () => {
                     id=""
                     placeholder="Detail Address: *"
                     required
+                    value={user?.address}
                   />
                 </div>
                 <div className="text-center">

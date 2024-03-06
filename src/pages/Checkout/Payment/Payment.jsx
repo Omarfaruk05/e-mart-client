@@ -44,22 +44,22 @@ const Payment = () => {
               <form>
                 <div className="flex gap-4">
                   <label>
-                    First Name:*
+                    First Name:
                     <input
                       className="input input-bordered rounded-sm w-full mb-4"
                       type="text"
-                      placeholder="First Name: *"
+                      placeholder="First Name: "
                       required
                       disabled
                       value={user?.firstName}
                     />
                   </label>
                   <label>
-                    Last Name:*
+                    Last Name:
                     <input
                       className="input input-bordered rounded-sm w-full"
                       type="text"
-                      placeholder="Last Name: *"
+                      placeholder="Last Name: "
                       required
                       disabled
                       value={user?.lastName}
@@ -68,81 +68,81 @@ const Payment = () => {
                 </div>
                 <div></div>
                 <div>
-                  <label>Town / City:*</label>
+                  <label>Town / City:</label>
                   <input
                     className="input input-bordered rounded-sm w-full mb-4"
                     type="text"
                     name="town"
                     id=""
-                    placeholder="Town / City: *"
+                    placeholder="Town / City: "
                     required
                     disabled
-                    value={"Dhaka"}
+                    value={user?.town}
                   />
                 </div>
                 <div>
-                  <label>Country:*</label>
+                  <label>Country:</label>
                   <input
                     className="input input-bordered rounded-sm w-full mb-4"
                     type="text"
                     name="country"
                     id=""
-                    placeholder="Country: *"
+                    placeholder="Country: "
                     required
                     disabled
-                    value={"Bangladesh"}
+                    value={user?.country}
                   />
                 </div>
                 <div>
-                  <label>Postcode / Zip:*</label>
+                  <label>Postcode / Zip:</label>
                   <input
                     className="input input-bordered rounded-sm w-full mb-4"
                     type="number"
                     name="portOrZipCode"
                     id=""
-                    placeholder="Postcode / Zip: *"
+                    placeholder="Postcode / Zip: "
                     required
                     disabled
-                    value={"1740"}
+                    value={user?.portOrZipCode}
                   />
                 </div>
                 <div>
-                  <label>Phone:*</label>
+                  <label>Phone:</label>
                   <input
                     className="input input-bordered rounded-sm w-full mb-4"
                     type="text"
                     name="contactNumber"
                     id=""
-                    placeholder="Phone: *"
+                    placeholder="Phone: "
                     required
                     disabled
-                    value={"+01567900262"}
+                    value={user?.contactNumber}
                   />
                 </div>
                 <div>
-                  <label>Email:*</label>
+                  <label>Email:</label>
                   <input
                     className="input input-bordered rounded-sm w-full mb-4"
                     type="email"
                     name="email"
                     id=""
-                    placeholder="Your Email: *"
+                    placeholder="Your Email: "
                     required
                     disabled
-                    value={"mdomarfaruk149518@gmail.com"}
+                    value={user?.email}
                   />
                 </div>
                 <div>
-                  <label>Address:*</label>
+                  <label>Address:</label>
                   <textarea
                     className="textarea textarea-bordered rounded-sm w-full mb-4 h-32"
                     type="text"
                     name="address"
                     id=""
-                    placeholder="Detail Address: *"
+                    placeholder="Detail Address: "
                     required
                     disabled
-                    value={"Bangladesh, Dhaka, Gazipur, "}
+                    value={user?.address}
                   />
                 </div>
               </form>
