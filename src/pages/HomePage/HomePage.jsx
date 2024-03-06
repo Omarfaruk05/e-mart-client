@@ -11,9 +11,6 @@ import BestProducts from "../../components/home/BestProducts";
 import FlashSellBanner from "../../components/home/FlashSellBanner";
 import ClientsComment from "../../components/home/ClientsComment";
 import Subscribe from "../../components/home/Subscribe";
-import { getSmartWatchs } from "../../redux/features/smartWatchs/smartWatchsSlice";
-import { useDispatch } from "react-redux";
-import { getHeadphones } from "../../redux/features/headphones/headphonesSlice";
 
 const HomePage = () => {
   return (

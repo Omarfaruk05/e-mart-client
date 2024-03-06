@@ -13,7 +13,6 @@ import {
   decreaseQuantity,
   removeFromCart,
 } from "../../../redux/features/cart/cartSlice";
-import { getUserInfo } from "../../../services/auth.service";
 
 const CartItems = () => {
   const dispatch = useDispatch();
@@ -173,6 +172,7 @@ const CartItems = () => {
                   className="btn btn-sm btn-primary font-bold px-5 rounded-sm mt-2"
                   type="submit"
                   value="Apply"
+                  disabled
                 />
               </form>
             </div>

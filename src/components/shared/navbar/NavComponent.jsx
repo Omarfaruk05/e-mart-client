@@ -78,7 +78,7 @@ const NavComponent = ({ children }) => {
                   <input
                     type="text"
                     placeholder="Search here..."
-                    className="input input-bordered w-32 md:w-60 lg:w-96"
+                    className="input  w-32 md:w-60 lg:w-96"
                   />
                   <input
                     className="btn btn-primary ml-2"
@@ -116,9 +116,7 @@ const NavComponent = ({ children }) => {
                               </NavLink>
                             </li>
                             <hr className="mx-2" />
-                            <li>
-                              <p className=" w-full text-black h-8">Profile</p>
-                            </li>
+
                             <hr className="mx-2" />
                             <li onClick={handleLogout}>
                               <p className=" w-full text-black h-8">Logout</p>

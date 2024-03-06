@@ -1,14 +1,23 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../../assets/banner/bg-t.png";
 import { getUserInfo } from "../../../services/auth.service";
+import { useForm } from "react-hook-form";
 
 const ConfirmOrder = () => {
+  const [saveInfo, setSaveInfo] = useState(false);
   const { cart } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
   const { email } = getUserInfo();
+
+  const { register, handleSubmit, reset } = useForm();
+
+  const onsubmit = (data) => {
+    console.log(data);
+    setSaveInfo(true);
+  };
 
   return (
     <div style={{ backgroundImage: `url(${backgroundImage})` }}>
@@ -43,7 +52,7 @@ const ConfirmOrder = () => {
           <div className="md:w-1/2">
             <h1 className="text-3xl font-bold m-4">Billing Details</h1>
             <div className="mx-2">
-              <form>
+              <form onSubmit={handleSubmit(onsubmit)}>
                 <div className="flex gap-4">
                   <input
                     className="input input-bordered rounded-sm w-full mb-4"
@@ -64,7 +73,7 @@ const ConfirmOrder = () => {
                   <input
                     className="input input-bordered rounded-sm w-full mb-4"
                     type="text"
-                    name="Address"
+                    {...register("street", { required: true })}
                     id=""
                     placeholder="House Number and Street Address *"
                     required
@@ -74,7 +83,7 @@ const ConfirmOrder = () => {
                   <input
                     className="input input-bordered rounded-sm w-full mb-4"
                     type="text"
-                    name="town"
+                    {...register("town", { required: true })}
                     id=""
                     placeholder="Town / City: *"
                     required
@@ -84,7 +93,7 @@ const ConfirmOrder = () => {
                   <input
                     className="input input-bordered rounded-sm w-full mb-4"
                     type="text"
-                    name="country"
+                    {...register("country", { required: true })}
                     id=""
                     placeholder="Country: *"
                     required
@@ -94,7 +103,7 @@ const ConfirmOrder = () => {
                   <input
                     className="input input-bordered rounded-sm w-full mb-4"
                     type="number"
-                    name="portOrZipCode"
+                    {...register("portOrZipCode", { required: true })}
                     id=""
                     placeholder="Postcode / Zip: *"
                     required
@@ -104,7 +113,7 @@ const ConfirmOrder = () => {
                   <input
                     className="input input-bordered rounded-sm w-full mb-4"
                     type="text"
-                    name="contactNumber"
+                    {...register("contactNumber", { required: true })}
                     id=""
                     placeholder="Phone: *"
                     required
@@ -112,12 +121,19 @@ const ConfirmOrder = () => {
                 </div>
                 <div>
                   <textarea
-                    className="textarea textarea-bordered rounded-sm w-full mb-4 h-32"
+                    className="textarea textarea-bordered rounded-sm w-full mb-2 h-32"
                     type="text"
-                    name="address"
+                    {...register("address", { required: true })}
                     id=""
                     placeholder="Detail Address: *"
                     required
+                  />
+                </div>
+                <div className="text-center">
+                  <input
+                    className="btn btn-sm rounded-sm btn-primary"
+                    type="submit"
+                    value="Save Info"
                   />
                 </div>
               </form>
@@ -235,11 +251,22 @@ const ConfirmOrder = () => {
           <div className="text-center">
             {email ? (
               <Link to={"/payment"}>
-                <button className="mx-2 btn btn-warning text-white font-bold my-4 rounded-sm">
-                  <span className="mt-1 mr-2">Confirm Order</span>
-                  <span>
-                    <ArrowRightIcon className="w-5"></ArrowRightIcon>
-                  </span>
+                <button
+                  className={
+                    saveInfo &&
+                    `mx-2 btn btn-warning text-white font-bold rounded-sm`
+                  }
+                >
+                  {saveInfo ? (
+                    <>
+                      <span className="mt-1 mr-2">Confirm Order</span>
+                      <span>
+                        <ArrowRightIcon className="w-5"></ArrowRightIcon>
+                      </span>
+                    </>
+                  ) : (
+                    ""
+                  )}
                 </button>
               </Link>
             ) : (

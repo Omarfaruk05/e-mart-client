@@ -70,6 +70,7 @@ const ShopingCart = ({ showCart, setShowCart }) => {
                 className="btn btn-sm btn-primary font-bold px-5 rounded-md"
                 type="submit"
                 value="Apply"
+                disabled
               />
             </form>
           </div>
