@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import {
   UserIcon,
@@ -23,7 +24,7 @@ const NavComponent = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const navigate = useNavigate();
   const { cart } = useSelector((state) => state.cart);
-  const { email } = getUserInfo();
+  const { user } = useSelector((state) => state.user);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -93,58 +94,54 @@ const NavComponent = ({ children }) => {
                   className=" w-6 mr-3 block md:hidden"
                 ></MagnifyingGlassIcon>
 
-                <ul className="menu menu-horizontal">
+                <div className="flex gap-2 items-center">
                   {/* <!-- Navbar menu content here --> */}
-                  <li>
-                    <a>
-                      {email ? (
-                        <div className="dropdown dropdown-end">
-                          <div tabIndex={1} role="button">
-                            <UserIcon className=" h-6 w-6"></UserIcon>
-                          </div>
-                          <ul
+                  {user?._id ? (
+                    <div className="dropdown dropdown-end">
+                      <div tabIndex={1} role="button">
+                        <UserIcon className=" h-6 w-6"></UserIcon>
+                      </div>
+                      <ul
+                        tabIndex={1}
+                        className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-52"
+                      >
+                        <li>
+                          <NavLink
                             tabIndex={1}
-                            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-md w-52"
+                            to={"/dashboard"}
+                            className=" w-full text-black h-8"
                           >
-                            <li>
-                              <NavLink
-                                tabIndex={1}
-                                to={"/dashboard"}
-                                className=" w-full text-black h-8"
-                              >
-                                Dashboard
-                              </NavLink>
-                            </li>
-                            <hr className="mx-2" />
+                            Dashboard
+                          </NavLink>
+                        </li>
+                        <hr className="mx-2" />
 
-                            <hr className="mx-2" />
-                            <li onClick={handleLogout}>
-                              <p className=" w-full text-black h-8">Logout</p>
-                            </li>
-                          </ul>
-                        </div>
-                      ) : (
-                        <label htmlFor="login-registration-modal">
-                          <span className="border border-dashed rounded-sm px-1">
-                            Login
-                          </span>
-                        </label>
-                      )}
-                    </a>
-                  </li>
+                        <hr className="mx-2" />
+                        <li onClick={handleLogout}>
+                          <p className=" w-full text-black h-8">Logout</p>
+                        </li>
+                      </ul>
+                    </div>
+                  ) : (
+                    <label htmlFor="login-registration-modal">
+                      <span className="border border-dashed rounded-sm px-1">
+                        Login
+                      </span>
+                    </label>
+                  )}
                   <LoginRegistration></LoginRegistration>
                   <div
-                    className="relative mt-3"
+                    className="relative mt-1"
                     onClick={() => setShowCart(!showCart)}
                   >
                     <p>
                       <ShoppingCartIcon className=" h-6 w-6"></ShoppingCartIcon>
                     </p>
-                    <p className="absolute -right-2 -top-2 mx-auto h-5 w-5  px-[3px] rounded-full  bg-red-500">
+                    <p className="absolute -right-1 -top-3 mx-auto h-5 w-5  px-[3px] rounded-full  bg-red-500">
                       {cart.length}
                     </p>
                   </div>
-                </ul>
+                </div>
               </div>
             </div>
           </div>

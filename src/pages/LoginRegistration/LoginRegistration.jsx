@@ -52,7 +52,6 @@ const LoginRegistration = () => {
   };
 
   const { email } = getUserInfo();
-  console.log(email);
 
   return (
     <div>
@@ -98,7 +97,7 @@ const LoginRegistration = () => {
               <div>
                 {/* login  */}
                 <div className={loginUser ? "flex items-center" : "hidden"}>
-                  <div className="flex items-center px-4 md:w-1/2 h-[500px] text-gray-700 bg-slate-200">
+                  <div className="flex items-center px-4 w-full md:w-1/2 h-[500px] text-gray-700 bg-slate-200">
                     <div className="w-full">
                       <form onSubmit={handleSubmit(handleLoginSubmit)}>
                         <div className="">
@@ -112,6 +111,7 @@ const LoginRegistration = () => {
                               aria-invalid={errors.email ? "true" : "false"}
                               placeholder="Your Email: *"
                               required
+                              defaultValue={"omarfaruk@gmail.com"}
                             />
                             {errors.email && (
                               <p className="text-red-500 text-xs" role="alert">
@@ -129,6 +129,7 @@ const LoginRegistration = () => {
                               aria-invalid={errors.password ? "true" : "false"}
                               placeholder="Password: *"
                               required
+                              defaultValue={"@F123456f"}
                             />
                             {errors.password && (
                               <p className="text-red-500 text-xs" role="alert">
@@ -151,7 +152,7 @@ const LoginRegistration = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="hidden md:block w-1/2">
+                  <div className="hidden md:block md:w-1/2">
                     <img src={loginPhoto} alt="" />
                   </div>
                 </div>
