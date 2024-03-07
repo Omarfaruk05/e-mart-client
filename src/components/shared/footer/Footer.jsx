@@ -96,10 +96,11 @@ const Footer = () => {
                 target="_blank"
                 href="https://github.com/Omarfaruk05"
                 className="mr-4"
+                rel="noreferrer"
               >
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-                  className=" w-12 bg-white rounded-full global-footer-social__icon w-12"
+                  className=" w-12 bg-white rounded-full global-footer-social__icon "
                   alt="Facebook"
                   title="Facebook"
                 />
@@ -108,10 +109,11 @@ const Footer = () => {
                 target="_blank"
                 href="https://www.facebook.com/profile.php?id=100023919873768"
                 className="mr-4"
+                rel="noreferrer"
               >
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Facebook_icon_2013.svg"
-                  className=" w-12 bg-white rounded-xl global-footer-social__icon rounded w-12"
+                  className=" w-12 bg-white rounded-xl global-footer-social__icon"
                   alt="Facebook"
                   title="Facebook"
                 />
@@ -120,10 +122,11 @@ const Footer = () => {
                 target="_blank"
                 href="https://www.instagram.com/omarfaruk0005/"
                 className="mr-4"
+                rel="noreferrer"
               >
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
-                  className=" w-12 bg-white rounded-xl global-footer-social__icon  w-12"
+                  className=" w-12 bg-white rounded-xl global-footer-social__icon"
                   alt="Instagram"
                   title="Instagram"
                 />

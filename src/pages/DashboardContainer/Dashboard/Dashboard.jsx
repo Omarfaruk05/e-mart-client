@@ -8,10 +8,10 @@ const Dashboard = () => {
   return (
     <div>
       <div>
-        <div className="flex gap-2">
+        <div className="flex">
           {/* sidebar  */}
           <div
-            className={`relative bg-slate-800 h-screen text-white p-3 ${
+            className={` bg-slate-800 h-screen sticky top-14 text-white p-3 ${
               showDrawer ? "w-8" : "w-60"
             } pr-6`}
           >
@@ -22,13 +22,13 @@ const Dashboard = () => {
             >
               <NavLink
                 to={"/dashboard"}
-                className="bg-slate-900 cursor-pointer tranistion duration-300 hover:bg-green-500 hover:outline hover:outline-[1px] hover:outline-dashed py-2 px-4 rounded-md"
+                className=" btn bg-slate-900 border-none text-white"
               >
                 Home
               </NavLink>
               <NavLink
                 to={"/dashboard/my-orders"}
-                className="bg-slate-900 cursor-pointer tranistion duration-300 hover:bg-green-500 hover:outline hover:outline-[1px] hover:outline-dashed py-2 px-4 rounded-md"
+                className="btn bg-slate-900 border-none text-white"
               >
                 My Orders
               </NavLink>
@@ -40,7 +40,7 @@ const Dashboard = () => {
               />
             </div>
           </div>
-          <div className="w-full m-2">
+          <div className="w-full bg-gray-100 p-3">
             <Outlet></Outlet>
           </div>
         </div>

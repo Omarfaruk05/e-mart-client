@@ -177,8 +177,8 @@ const ConfirmOrder = () => {
                 <h3 className="text-lg font-bold uppercase">Total Price</h3>
               </div>
               <div className="border mx-2 ">
-                {cart.map((cartItem) => (
-                  <>
+                {cart.map((cartItem, index) => (
+                  <div key={index}>
                     <div className="grid justify-between items-center grid-cols-1 md:grid-cols-4 gap-2 bg-base-100text-center md:text-start relative px-2 hover:bg-slate-50 py-2">
                       {/* product  */}
                       <div className="md:col-span-2 flex items-center justify-center md:justify-start">
@@ -217,7 +217,7 @@ const ConfirmOrder = () => {
                       </h2>
                     </div>
                     <hr className="" />
-                  </>
+                  </div>
                 ))}
                 <hr />
                 <div className="grid grid-cols-4 gap-2 p-2 bg-base-100">

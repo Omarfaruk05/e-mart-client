@@ -1,6 +1,5 @@
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import React from "react";
-import photo from "../../assets/discount-photo/disouunt-1.png";
 import ProductCartLoader from "../shared/Loader/ProductCartLoader";
 import { useGetAllProductQuery } from "../../redux/features/product/productApi";
 

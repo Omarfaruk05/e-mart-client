@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import sidePic1 from "../../assets/discount-photo/about-1.jpg";
 import sidePic2 from "../../assets/discount-photo/about-2.jpg";
 import Brands from "./Brands";

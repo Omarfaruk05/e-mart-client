@@ -1,12 +1,9 @@
 import { StarIcon } from "@heroicons/react/24/solid";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import backgroundImage from "../../assets/banner/bg-t.png";
-import { ShoppingCartIcon } from "@heroicons/react/24/outline";
-import { useDispatch, useSelector } from "react-redux";
-import { getProductDetails } from "../../redux/features/productDetails/productDetails";
+import { useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { addToCart } from "../../redux/features/cart/cartSlice";
-import { getProducts } from "../../redux/features/product/productSlice";
 import ProductDetailsLoader from "../../components/shared/Loader/ProductDetailsLoader";
 import ScrollToTop from "../../lib/ScrollToTop";
 import { useGetSingleProductQuery } from "../../redux/features/product/productApi";
@@ -38,7 +35,6 @@ const ProductDetails = () => {
 
   const handleRating = (rating) => {
     setRating(rating);
-    console.log(rating);
   };
   const handlePhoto = (num) => {
     setNum(num);

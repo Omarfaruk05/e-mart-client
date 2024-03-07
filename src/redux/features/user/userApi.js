@@ -13,7 +13,7 @@ export const userApi = baseApi.injectEndpoints({
       query: (data) => ({
         url: `${USER_URL}/signup`,
         method: "POST",
-        data,
+        body: data,
       }),
       invalidatesTags: [tagTypes.user],
     }),

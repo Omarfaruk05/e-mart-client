@@ -3,11 +3,38 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import backgroundImage from "../../../assets/banner/bg-t.png";
+import { useCreateOrderMutation } from "../../../redux/features/order/orderApi";
+import { toast } from "react-toastify";
 
 const Payment = () => {
   const { cart } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
 
+  const [createOrder] = useCreateOrderMutation();
+
+  const handlePayment = async () => {
+    try {
+      const totalAmount = cart
+        .reduce((total, item) => total + item.price * item.quantity + 130, 0)
+        .toString();
+      const products = cart.map((product) => product?._id);
+
+      const order = {
+        totalAmount,
+        products,
+        ...user,
+      };
+      const res = await createOrder(order).unwrap();
+      if (res) {
+        window.location.replace(res?.data);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error?.data?.message);
+    }
+  };
+
+  console.log(user);
   return (
     <div style={{ backgroundImage: `url(${backgroundImage})` }}>
       <div className="max-w-7xl mx-auto">
@@ -254,14 +281,15 @@ const Payment = () => {
             </Link>
           </div>
           <div className="text-center">
-            <Link to={"/receipt"}>
-              <button className="mx-2 btn btn-success text-white font-bold my-4 rounded-sm">
-                <span className="mt-1 mr-2 ml-3">Pay</span>
-                <span>
-                  <ArrowRightIcon className="w-5"></ArrowRightIcon>
-                </span>
-              </button>
-            </Link>
+            <button
+              onClick={handlePayment}
+              className="mx-2 btn btn-success text-white font-bold my-4 rounded-sm"
+            >
+              <span className="mt-1 mr-2 ml-3">Pay</span>
+              <span>
+                <ArrowRightIcon className="w-5"></ArrowRightIcon>
+              </span>
+            </button>
           </div>
         </div>
       </div>
